@@ -1,10 +1,20 @@
 import React from "react";
-import logo from "./logo.svg";
 import { useSelector } from "react-redux";
 import { AllSettingsStoreSelector } from "./store/app/selectors";
+import { IntlProvider } from "react-intl";
+import i18n, { getMessages } from "./i18n";
 
 function App() {
-  return <>app</>;
+  const settings = useSelector(AllSettingsStoreSelector);
+  return (
+    <IntlProvider
+      messages={getMessages(settings.language)}
+      locale={settings.language}
+      defaultLocale="pl"
+    >
+      app
+    </IntlProvider>
+  );
 }
 
 export default App;

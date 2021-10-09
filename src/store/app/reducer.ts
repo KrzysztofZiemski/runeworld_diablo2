@@ -2,10 +2,10 @@ import { Language } from "../../types/language";
 import { Action } from "../createActions";
 import actions from "./actions";
 
-export interface Avatar {
+export interface Settings {
   language: Language;
 }
-export const initialState: Avatar = {
+export const initialState: Settings = {
   language: Language.PL,
 };
 
