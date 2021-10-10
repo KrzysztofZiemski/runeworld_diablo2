@@ -18,7 +18,7 @@ export const reducer = (state = initialState, action: Action) => {
   switch (action.type) {
     case actions.GET_RUNES:
       return state;
-    case actions.UPDATE:
+    case actions.UPDATE_RUNES:
       const runes = { ...state.runes };
       runes[action.payload.name] = action.payload.value;
       new FilterLocalStorage().setRune(action.payload);

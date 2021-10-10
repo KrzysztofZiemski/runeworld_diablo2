@@ -1,3 +1,21 @@
 {
-  "language": "Polski"
+  "language": "Polski",
+
+  "AncientsPledge": "Ancient's Pledge",
+  "Black": "Black",
+  "Fury": "Fury",
+  "HolyThunder": "Holy Thunder",
+  "Honor": "Honor",
+  "KingsGrace": "King's Grace",
+  "Leaf": "Leaf",
+  "Lionheart": "Lionheart",
+  "Lore": "Lore",
+  "Malice": "Malice",
+  "Melody": "Melody",
+  "Memory": "Memory",
+  "Nadir": "Nadir",
+  "Radiance": "Radiance",
+  "Rhyme": "Rhyme",
+  "Silence": "Silence",
+  "Smoke": "Smoke"
 }

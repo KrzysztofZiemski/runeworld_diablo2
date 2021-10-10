@@ -1,4 +1,4 @@
-import { Rune } from "../../../types/rune";
+import { Rune, RuneItem } from "../../../types/rune";
 
 import el from "./el.jpg";
 import eld from "./eld.jpg";
@@ -34,7 +34,7 @@ import jah from "./jah.jpg";
 import cham from "./cham.jpg";
 import zod from "./zod.jpg";
 
-export const runes = [
+export const runeItems: RuneItem[] = [
   {
     name: Rune.el,
     src: el,

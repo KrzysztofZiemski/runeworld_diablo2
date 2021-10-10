@@ -8,5 +8,5 @@ const i18n = {
 };
 
 export const getMessages = (language: Language) => {
-  return i18n[language] || pl;
+  return pl;
 };

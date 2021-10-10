@@ -4,15 +4,15 @@ import { createAction } from "../createActions";
 export const filtersStoreName = `FILTERS`;
 
 export const GET_RUNES = `${filtersStoreName} GET_RUNES`;
-export const UPDATE = `${filtersStoreName} UPDATE`;
+export const UPDATE_RUNES = `${filtersStoreName} UPDATE_RUNES`;
 
 export const getAllRunes = () => createAction(GET_RUNES);
 export const updateRune = (payload: { name: Rune; value: boolean }) =>
-  createAction(GET_RUNES, payload);
+  createAction(UPDATE_RUNES, payload);
 
 const actions = {
   GET_RUNES,
-  UPDATE,
+  UPDATE_RUNES,
   getAllRunes,
 };
 

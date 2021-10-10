@@ -33,3 +33,8 @@ export enum Rune {
   cham = "cham",
   zod = "zod",
 }
+
+export type RuneItem = {
+  name: Rune;
+  src: string;
+};
