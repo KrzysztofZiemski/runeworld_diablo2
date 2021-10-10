@@ -1,8 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { AllSettingsStoreSelector } from "./store/app/selectors";
+import { AllSettingsStoreSelector } from "./store/appConfig/selectors";
 import { IntlProvider } from "react-intl";
-import i18n, { getMessages } from "./i18n";
+import { getMessages } from "./i18n";
+import Panel from "./components/Panel";
 
 function App() {
   const settings = useSelector(AllSettingsStoreSelector);
@@ -12,7 +13,7 @@ function App() {
       locale={settings.language}
       defaultLocale="pl"
     >
-      app
+      <Panel />
     </IntlProvider>
   );
 }
