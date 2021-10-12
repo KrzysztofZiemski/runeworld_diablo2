@@ -3,9 +3,9 @@ import React from "react";
 
 const theme = createTheme({
   palette: {
-    primary: {
-      main: "#903A58",
-    },
+    // primary: {
+    // main: "#903A58",
+    // },
   },
   typography: {
     h1: {},
