@@ -1,7 +1,10 @@
 import React from "react";
-import { items } from "../../assests/items";
+import { useIntl } from "react-intl";
+import { items } from "../../utils/items";
 
 export default function ItemsTable() {
+  const intl = useIntl();
+
   return (
     <table>
       <thead>
@@ -16,11 +19,17 @@ export default function ItemsTable() {
       </thead>
       {items.map(({ name, allowed, runes, reqLvl, stats }) => (
         <tr>
-          <td>{name}</td>
+          <td>
+            {intl.formatMessage({
+              id: name,
+            })}
+          </td>
           <td>
             {allowed.map(
               (itemType, index) =>
-                `${itemType} ${index + 1 < allowed.length ? " + " : ""}`
+                `${intl.formatMessage({
+                  id: `ItemType.${itemType}`,
+                })}${index < allowed.length - 1 ? ", " : ""}`
             )}
           </td>
           <td>{runes.length}</td>
@@ -33,8 +42,16 @@ export default function ItemsTable() {
           <td>{reqLvl}</td>
           <td>
             <ul>
-              {stats.map((stat) => (
-                <li>{stat}</li>
+              {stats.map(({ id, defaultMessage, value }) => (
+                <li>
+                  {intl.formatMessage(
+                    {
+                      id,
+                      defaultMessage,
+                    },
+                    { value }
+                  )}
+                </li>
               ))}
             </ul>
           </td>
