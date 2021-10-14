@@ -1,12 +1,14 @@
 import React from "react";
-import { runeItems } from "../../assests/images/runes";
+import { runeItems } from "../../utils/runes";
 import Filters from "./Filters";
-import RunesList from "./RunesList";
+import TypeItemsListFilter from "./TypeItemsListFilter/TypeItemsListFilter";
+import RuneListFilter from "./RuneListFilter/RuneListFilter";
 
 export default function Panel() {
   return (
-    <div style={{ display: "flex" }}>
-      <RunesList list={runeItems} />
+    <div>
+      <RuneListFilter list={runeItems} />
+      <TypeItemsListFilter />
       <Filters />
     </div>
   );

@@ -1,8 +1,8 @@
 export enum ItemType {
-  weapon = "weapon",
-  shield = "shield",
-  helm = "helm",
   chest = "chest",
+  helm = "helm",
+  shield = "shield",
+  weapon = "weapon",
 }
 
 export enum Weapon {

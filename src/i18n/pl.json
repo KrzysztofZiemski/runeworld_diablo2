@@ -76,8 +76,16 @@
     "Smoke": "Smoke",
     "Fortitude": "Fortitude"
   },
+  "tableHeaders": {
+    "name": "Name",
+    "allowedTypeItems": "Allowed Items",
+    "numberSockets": "Number Of Sockets",
+    "runes": "Runes",
+    "requiedLevel": "requied level",
+    "stats": "Statistics"
+  },
   "other": {
-    "to": "do",
-    "chanceOf": "szansa na"
+    "selectAll": "Select all",
+    "unselectAll": "Unselect all"
   }
 }
