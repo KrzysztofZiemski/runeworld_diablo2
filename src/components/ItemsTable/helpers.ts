@@ -1,4 +1,3 @@
-import { WeaponName, WeaponType } from "../../types/items";
 import { Items } from "./../../utils/items";
 
 export class ItemFilters {
@@ -12,16 +11,8 @@ export class ItemFilters {
     return this.items.filter(
       (item) =>
         !!item.allowed.find((allowedSingleItem) => {
-          let isMeleeWeaponsOrWeapons = false;
-
           const isFindedBassicalyFilter = !!allowedFilters.find(
             (allowedFilter) => {
-              if (
-                allowedFilter === WeaponType.MeleeWeapons ||
-                WeaponType.Weapons
-              )
-                isMeleeWeaponsOrWeapons = true;
-
               return allowedFilter === allowedSingleItem;
             }
           );
