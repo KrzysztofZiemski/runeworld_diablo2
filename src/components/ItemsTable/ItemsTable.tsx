@@ -1,11 +1,11 @@
 import { List, ListItem } from "@mui/material";
-// import React, { useMemo } from "react";
+import React, { useMemo } from "react";
 import { useIntl } from "react-intl";
-// import { useSelector } from "react-redux";
-// import { AllFiltersTypeSelector } from "../../store/filters/selectors";
+import { useSelector } from "react-redux";
+import { AllFiltersTypeSelector } from "../../store/filters/selectors";
 import { items } from "../../utils/items";
 import DataTable from "../DataTable/DataTable";
-// import { ItemFilters } from "./helpers";
+import { ItemFilters } from "./helpers";
 
 const headersIds = [
   "name",
@@ -17,7 +17,7 @@ const headersIds = [
 
 export default function ItemsTable() {
   const intl = useIntl();
-  // const { runes, itemTypes } = useSelector(AllFiltersTypeSelector);
+  const { runes, itemTypes } = useSelector(AllFiltersTypeSelector);
 
   const headers = headersIds.map((header) =>
     intl.formatMessage({
@@ -25,15 +25,12 @@ export default function ItemsTable() {
     })
   );
 
-  // const itemsAfterFilter = useMemo(() => {
-  //   const resultRunes = new ItemFilters(items).filterRune(runes);
-  //   const resultItemtypes = new ItemFilters(resultRunes).filterItemType(
-  //     itemTypes
-  //   );
-  //   return resultItemtypes;
-  // }, [runes, itemTypes]);
+  const resultRunes = new ItemFilters(items).filterRune(runes);
+  const resultItemtypes = new ItemFilters(resultRunes).filterItemType(
+    itemTypes
+  );
 
-  const rows = items.map((el) => {
+  const rows = resultItemtypes.map((el) => {
     const allowed = el.allowed.map(
       (itemType: any, index: number) =>
         `${intl.formatMessage({
@@ -41,6 +38,7 @@ export default function ItemsTable() {
         })}${index < el.allowed.length - 1 ? ", " : ""}`
     );
 
+    const runes = el.runes.join(", ");
     const name = intl.formatMessage({
       id: `items.${el.name}`,
     });
@@ -51,14 +49,14 @@ export default function ItemsTable() {
           <ListItem key={id}>
             {intl.formatMessage({
               id,
-              // defaultMessage,
+              defaultMessage,
             })}
           </ListItem>
         ))}
       </List>
     );
 
-    return [name, allowed, el.runes.length, el.reqLvl, statsList];
+    return [name, allowed, runes, el.reqLvl, statsList];
   });
 
   return <DataTable headers={headers} rows={rows}></DataTable>;
