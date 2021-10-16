@@ -1,5 +1,4 @@
 import { List, ListItem } from "@mui/material";
-import React, { useMemo } from "react";
 import { useIntl } from "react-intl";
 import { useSelector } from "react-redux";
 import { AllFiltersTypeSelector } from "../../store/filters/selectors";
