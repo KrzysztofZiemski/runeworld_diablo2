@@ -1,7 +1,6 @@
 import React from "react";
-import { AppBar, IconButton, Theme, Toolbar } from "@mui/material";
+import { AppBar, Theme, Toolbar } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import MenuIcon from "@mui/icons-material/Menu";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {

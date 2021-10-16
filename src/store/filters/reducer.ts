@@ -7,18 +7,18 @@ import {
   initialRunes,
 } from "./helpers";
 
-export type Settings = {
+export type FiltersState = {
   runes: { [key: string]: boolean };
-  items: { [key: string]: boolean };
+  itemTypes: { [key: string]: boolean };
 };
 export type RuneFilter = {
   name: string;
   value: boolean;
 };
 
-export const initialState: Settings = {
+export const initialState: FiltersState = {
   runes: initialRunes(),
-  items: initialItems(),
+  itemTypes: initialItems(),
 };
 
 export const reducer = (state = initialState, action: Action) => {
@@ -35,12 +35,12 @@ export const reducer = (state = initialState, action: Action) => {
       return { ...state, runes };
 
     case actions.UPDATE_ITEM_TYPE:
-      const items = { ...state.items };
-      items[action.payload.name] = action.payload.value;
+      const itemTypes = { ...state.itemTypes };
+      itemTypes[action.payload.name] = action.payload.value;
       new FilterRunesLocalStorage(FilterLocalStorage.items).setItem(
         action.payload
       );
-      return { ...state, items };
+      return { ...state, itemTypes };
 
     default: {
       return state;

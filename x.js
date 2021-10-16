@@ -1,21 +1,4 @@
-import { ArmorType, WeaponName, WeaponType } from "../types/items";
-import { Rune } from "../types/rune";
-
-type Allowed = ArmorType | WeaponName | WeaponType;
-type Stat = {
-  id: string;
-  defaultMessage: string;
-};
-
-export type Items = {
-  name: string;
-  allowed: Allowed[] | string[];
-  runes: Rune[] | string[];
-  reqLvl: number;
-  stats: Stat[];
-};
-
-export const items: Items[] = [
+[
   {
     name: "Splendor",
     reqLvl: 37,
@@ -653,8 +636,8 @@ export const items: Items[] = [
         defaultMessage: "+3-8 Magic Absorb",
       },
       {
-        id: "stats.AttackerTakesDamageof14",
-        defaultMessage: "Attacker Takes Damage of 14",
+        id: "stats.",
+        defaultMessage: "",
       },
     ],
     runes: ["Tal", "Thul", "Ort", "Amn"],
@@ -801,6 +784,10 @@ export const items: Items[] = [
         id: "stats.1ToLightRadius",
         defaultMessage: "+1 To Light Radius",
       },
+      {
+        id: "stats.",
+        defaultMessage: "",
+      },
     ],
     runes: ["El", "Sol", "Dol", "Lo"],
   },
@@ -848,6 +835,10 @@ export const items: Items[] = [
       {
         id: "stats.1521FireAbsorb",
         defaultMessage: "+15-21 Fire Absorb",
+      },
+      {
+        id: "stats.",
+        defaultMessage: "",
       },
     ],
     runes: ["Vex", "Vex", "Lo", "Jah"],

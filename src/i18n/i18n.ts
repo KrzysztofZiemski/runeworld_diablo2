@@ -27,5 +27,5 @@ export const flattenMessages = (nestedMessages: any, prefix = "") => {
 
 export const getMessages = (language: Language) => {
   const file = i18n[language] || pl;
-  return flattenMessages(pl);
+  return flattenMessages(file);
 };

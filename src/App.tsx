@@ -1,4 +1,3 @@
-import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { AllSettingsStoreSelector } from "./store/appConfig/selectors";
 import { IntlProvider } from "react-intl";

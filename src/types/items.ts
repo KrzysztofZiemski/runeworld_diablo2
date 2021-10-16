@@ -1,22 +1,25 @@
-export enum ItemType {
-  chest = "chest",
-  helm = "helm",
-  shield = "shield",
-  weapon = "weapon",
+export enum ArmorType {
+  BodyArmor = "BodyArmor",
+  Helms = "Helms",
+  PaladinShields = "PaladinShields",
+  Shields = "Shields",
 }
 
-export enum Weapon {
-  axes = "axes",
-  bows = "bows",
-  crossbows = "crossbows",
-  daggers = "daggers",
-  javelins = "javelins",
-  maces = "maces",
-  polearms = "polearms",
-  scepters = "scepters",
-  spears = "spears",
-  staves = "staves",
-  swords = "swords",
-  throwingWeapons = "throwingWeapons",
-  wands = "wands",
+export enum WeaponName {
+  Polearms = "Polearms",
+  Katars = "Katars",
+  Axes = "Axes",
+  Swords = "Swords",
+  Hammers = "Hammers",
+  Clubs = "Clubs",
+  Scepters = "Scepters",
+  Maces = "Maces",
+  Wand = "Wand",
+  Staves = "Staves",
+}
+
+export enum WeaponType {
+  Weapons = "Weapons",
+  MeleeWeapons = "MeleeWeapons",
+  MissileWeapons = "MissileWeapons",
 }

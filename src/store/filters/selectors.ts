@@ -1,6 +1,7 @@
 import { createSelector } from "reselect";
 
 import { filtersStoreName } from "./actions";
+import { FiltersState } from "./reducer";
 
 export const AllRunesSelector = createSelector(
   (state: any) => state,
@@ -9,5 +10,10 @@ export const AllRunesSelector = createSelector(
 
 export const AllItemsTypeSelector = createSelector(
   (state: any) => state,
-  (state): { [key: string]: boolean } => state[filtersStoreName].items
+  (state): { [key: string]: boolean } => state[filtersStoreName].itemTypes
+);
+
+export const AllFiltersTypeSelector = createSelector(
+  (state: any) => state,
+  (state): FiltersState => state[filtersStoreName]
 );

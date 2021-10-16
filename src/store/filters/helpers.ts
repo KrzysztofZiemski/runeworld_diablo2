@@ -1,4 +1,4 @@
-import { ItemType } from "../../types/items";
+import { ArmorType, WeaponName, WeaponType } from "../../types/items";
 import { Rune } from "../../types/rune";
 
 export enum FilterLocalStorage {
@@ -41,7 +41,11 @@ export const initialRunes = () => {
 };
 
 export const initialItems = () => {
-  const arrItems = Object.values(ItemType);
+  const arrItems = [
+    ...Object.values(ArmorType),
+    ...Object.values(WeaponName),
+    ...Object.values(WeaponType),
+  ];
   const output: any = {};
   arrItems.forEach((item) => {
     if (item)

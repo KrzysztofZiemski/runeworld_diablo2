@@ -11,11 +11,9 @@ import ListItemFilter from "../ListItemFilter";
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     display: "flex",
-    justifyContent: "space-between",
     overflow: "auto",
-    width: "100%",
     [theme.breakpoints.up("md")]: {
-      width: 600,
+      // width: 600,
     },
   },
   runeColumn: {
@@ -51,7 +49,7 @@ export default function RuneListFilter({ list }: RunesListProps) {
     const y = list.slice(11, 22);
     const z = list.slice(22);
     return [x, y, z];
-  }, []);
+  }, [list]);
 
   const signAllRunesInPart = (index: number, value: boolean) => {
     partsRuneLists[index].forEach(({ name }) => {
