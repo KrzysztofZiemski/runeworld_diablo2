@@ -74,15 +74,17 @@ export default function RuneListFilter({ list }: RunesListProps) {
 
         return (
           <div key={index} className={classes.runeColumn}>
-            <ListItemFilter
-              name={`column-${index + 1}`}
-              checked={!isAnyFalse}
-              onChange={() =>
-                signAllRunesInPart(index, isAnyFalse ? true : false)
-              }
-            >
-              {massCheckboxTitle}
-            </ListItemFilter>
+            <div style={{ width: 180 }}>
+              <ListItemFilter
+                name={`column-${index + 1}`}
+                checked={!isAnyFalse}
+                onChange={() =>
+                  signAllRunesInPart(index, isAnyFalse ? true : false)
+                }
+              >
+                {massCheckboxTitle}
+              </ListItemFilter>
+            </div>
             {list.map(({ name, src }) => (
               <ListItemFilter
                 key={name}

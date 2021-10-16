@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   root: {
     display: "flex",
     flexDirection: "row",
+    overflow: "auto",
   },
   list: {},
 }));
