@@ -19,7 +19,6 @@ const partsRuneLists = [runesPart1, runesPart2, runesPart3];
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     display: "flex",
-    overflow: "auto",
     paddingTop: "0px !important",
   },
   runeColumn: {

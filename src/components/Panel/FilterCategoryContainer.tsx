@@ -6,6 +6,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   root: {
     margin: theme.spacing(1),
     padding: theme.spacing(1),
+    overflow: "auto",
   },
 }));
 export default function FilterCategoryContainer({
