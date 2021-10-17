@@ -22,22 +22,40 @@ export const initialState: FiltersState = {
 
 export const reducer = (state = initialState, action: Action) => {
   switch (action.type) {
-    case actions.GET_RUNES:
-      return state;
-
     case actions.UPDATE_SOCKETS:
       new FilterRunesLocalStorage(FilterLocalStorage.sockets).setItem({
         value: action.payload,
       });
       return { ...state, sockets: action.payload };
 
-    case actions.UPDATE_RUNES:
+    case actions.UPDATE_RUNE:
       const runes = { ...state.runes };
       runes[action.payload.name] = action.payload.value;
       new FilterRunesLocalStorage(FilterLocalStorage.runes).setItem(
         action.payload
       );
       return { ...state, runes };
+
+    case actions.UPDATE_MANY_RUNES:
+      const newValueRunes: { [key: string]: boolean } = {};
+      action.payload.forEach(
+        ({ name, value }: { name: string; value: boolean }) =>
+          (newValueRunes[name] = value)
+      );
+
+      return { ...state, runes: { ...state.runes, ...newValueRunes } };
+
+    case actions.UPDATE_MANY_ITEM_TYPES:
+      const newValueItemTypes: { [key: string]: boolean } = {};
+      action.payload.forEach(
+        ({ name, value }: { name: string; value: boolean }) =>
+          (newValueItemTypes[name] = value)
+      );
+
+      return {
+        ...state,
+        itemTypes: { ...state.itemTypes, ...newValueItemTypes },
+      };
 
     case actions.UPDATE_ITEM_TYPE:
       const itemTypes = { ...state.itemTypes };

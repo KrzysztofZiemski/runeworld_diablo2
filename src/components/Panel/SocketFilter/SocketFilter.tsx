@@ -5,7 +5,6 @@ import {
   MenuItem,
   Select,
   SelectChangeEvent,
-  Theme,
 } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { updateSockets } from "../../../store/filters/actions";

@@ -21,7 +21,6 @@ export class ItemFilters {
     );
   }
   public filterItemSocket(value: number) {
-    console.log(value);
     if (!value) return this.items;
 
     return this.items.filter((item) => item.runes.length === value);

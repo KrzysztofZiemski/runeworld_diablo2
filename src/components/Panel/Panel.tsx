@@ -1,14 +1,12 @@
-import React from "react";
-import { runeItems } from "../../utils/runes";
 import TypeItemsListFilter from "./TypeItemsListFilter/TypeItemsListFilter";
 import RuneListFilter from "./RuneListFilter/RuneListFilter";
 import FilterCategoryContainer from "./FilterCategoryContainer";
-import { Grid, Theme } from "@mui/material";
+import { Grid } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import SocketFilter from "./SocketFilter/SocketFilter";
 
 // @ts-ignore
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     display: "flex",
     flexWrap: "wrap",
@@ -16,7 +14,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   subContainer: {
     display: "flex",
-    flexDirection: "column" + "!important",
+    flexDirection: "column !important",
     justifyContent: "space-between",
     overflow: "auto",
   },
@@ -27,7 +25,7 @@ export default function Panel() {
   return (
     <Grid className={classes.root}>
       <FilterCategoryContainer>
-        <RuneListFilter list={runeItems} />
+        <RuneListFilter />
       </FilterCategoryContainer>
       <Grid className={classes.subContainer}>
         <FilterCategoryContainer>

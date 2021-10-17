@@ -1,25 +1,26 @@
 import { Grid, List, Theme } from "@mui/material";
 import { makeStyles } from "@mui/styles";
-import React, { useMemo } from "react";
+import React from "react";
 import { useIntl } from "react-intl";
 import { useDispatch, useSelector } from "react-redux";
-import { updateRune } from "../../../store/filters/actions";
+import { updateManyRunes, updateRune } from "../../../store/filters/actions";
 import { AllRunesSelector } from "../../../store/filters/selectors";
-import { Rune, RuneItem } from "../../../types/rune";
+import { Rune } from "../../../types/rune";
+import { runeItems } from "../../../utils/runes";
 import FilterCategoryTitle from "../FilterCategoryTitle";
 import ListItemFilter from "../ListItemFilter";
+
+const runesPart1 = runeItems.slice(0, 11);
+const runesPart2 = runeItems.slice(11, 22);
+const runesPart3 = runeItems.slice(22);
+
+const partsRuneLists = [runesPart1, runesPart2, runesPart3];
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     display: "flex",
     overflow: "auto",
     paddingTop: "0px !important",
-    [theme.breakpoints.up("md")]: {
-      // width: 600,
-    },
-  },
-  runeColumnAllField: {
-    // marginBottom: theme.spacing(1),
   },
   runeColumn: {
     width: "50%",
@@ -33,10 +34,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-interface RunesListProps {
-  list: RuneItem[];
-}
-export default function RuneListFilter({ list }: RunesListProps) {
+export default function RuneListFilter() {
   const classes = useStyles();
   const intl = useIntl();
   const dispatch = useDispatch();
@@ -49,17 +47,9 @@ export default function RuneListFilter({ list }: RunesListProps) {
     dispatch(updateRune({ name, value }));
   };
 
-  const partsRuneLists = useMemo(() => {
-    const x = list.slice(0, 11);
-    const y = list.slice(11, 22);
-    const z = list.slice(22);
-    return [x, y, z];
-  }, [list]);
-
   const signAllRunesInPart = (index: number, value: boolean) => {
-    partsRuneLists[index].forEach(({ name }) => {
-      dispatch(updateRune({ name, value }));
-    });
+    const payload = partsRuneLists[index].map(({ name }) => ({ name, value }));
+    dispatch(updateManyRunes(payload));
   };
 
   const title = intl.formatMessage({
@@ -77,17 +67,17 @@ export default function RuneListFilter({ list }: RunesListProps) {
 
           const massCheckboxTitle = isAnyFalse
             ? intl.formatMessage({
-                id: "other.selectAll",
+                id: "other.all",
                 defaultMessage: "all",
               })
             : intl.formatMessage({
-                id: "other.unselectAll",
+                id: "other.all",
                 defaultMessage: "all",
               });
 
           return (
             <div key={index} className={classes.runeColumn}>
-              <Grid className={classes.runeColumnAllField}>
+              <Grid style={{ width: 150 }}>
                 <ListItemFilter
                   name={`column-${index + 1}`}
                   checked={!isAnyFalse}

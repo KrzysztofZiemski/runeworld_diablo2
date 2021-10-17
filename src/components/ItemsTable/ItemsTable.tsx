@@ -34,7 +34,7 @@ export default function ItemsTable() {
       sockets
     );
     return endResult;
-  }, [runes, items, sockets]);
+  }, [runes, sockets, itemTypes]);
 
   const rows = listAfterFilter.map((el) => {
     const allowed = el.allowed.map(

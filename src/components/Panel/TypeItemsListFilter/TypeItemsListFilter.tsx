@@ -3,7 +3,10 @@ import { makeStyles } from "@mui/styles";
 import React, { useMemo } from "react";
 import { useIntl } from "react-intl";
 import { useSelector, useDispatch } from "react-redux";
-import { updateItemType } from "../../../store/filters/actions";
+import {
+  updateItemType,
+  updateManyItemTypes,
+} from "../../../store/filters/actions";
 import { AllItemsTypeSelector } from "../../../store/filters/selectors";
 import { ArmorType, WeaponName, WeaponType } from "../../../types/items";
 import FilterCategoryTitle from "../FilterCategoryTitle";
@@ -54,12 +57,13 @@ export default function TypeItemsListFilter() {
 
   const onChangeAll = () => {
     const value = !isAllChecked;
-    console.log(value);
-    allItemsArr.forEach((nameItem) => {
+
+    const payload = allItemsArr.map((nameItem) => {
       const name = nameItem as ArmorType | WeaponType | WeaponName;
-      console.log(nameItem);
-      dispatch(updateItemType({ name, value }));
+      return { name, value };
     });
+
+    dispatch(updateManyItemTypes(payload));
   };
 
   return (
