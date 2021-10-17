@@ -5,26 +5,31 @@ import {
   FilterRunesLocalStorage,
   initialItems,
   initialRunes,
+  initialSockets,
 } from "./helpers";
 
 export type FiltersState = {
   runes: { [key: string]: boolean };
   itemTypes: { [key: string]: boolean };
-};
-export type RuneFilter = {
-  name: string;
-  value: boolean;
+  sockets: number;
 };
 
 export const initialState: FiltersState = {
   runes: initialRunes(),
   itemTypes: initialItems(),
+  sockets: initialSockets(),
 };
 
 export const reducer = (state = initialState, action: Action) => {
   switch (action.type) {
     case actions.GET_RUNES:
       return state;
+
+    case actions.UPDATE_SOCKETS:
+      new FilterRunesLocalStorage(FilterLocalStorage.sockets).setItem({
+        value: action.payload,
+      });
+      return { ...state, sockets: action.payload };
 
     case actions.UPDATE_RUNES:
       const runes = { ...state.runes };

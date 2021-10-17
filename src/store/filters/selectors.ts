@@ -13,6 +13,11 @@ export const AllItemsTypeSelector = createSelector(
   (state): { [key: string]: boolean } => state[filtersStoreName].itemTypes
 );
 
+export const SocketsSelector = createSelector(
+  (state: any) => state,
+  (state): number => state[filtersStoreName].sockets
+);
+
 export const AllFiltersTypeSelector = createSelector(
   (state: any) => state,
   (state): FiltersState => state[filtersStoreName]

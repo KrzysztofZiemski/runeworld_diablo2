@@ -7,11 +7,15 @@ export const filtersStoreName = `FILTERS`;
 export const GET_RUNES = `${filtersStoreName} GET_RUNES`;
 export const UPDATE_RUNES = `${filtersStoreName} UPDATE_RUNES`;
 export const UPDATE_ITEM_TYPE = `${filtersStoreName} UPDATE_ITEM_TYPE`;
+export const UPDATE_SOCKETS = `${filtersStoreName} UPDATE_SOCKETS`;
 
 export const getAllRunes = () => createAction(GET_RUNES);
 
 export const updateRune = (payload: { name: Rune; value: boolean }) =>
   createAction(UPDATE_RUNES, payload);
+
+export const updateSockets = (payload: number | null) =>
+  createAction(UPDATE_SOCKETS, payload);
 
 export const updateItemType = (payload: {
   name: ArmorType | WeaponName | WeaponType;
@@ -19,11 +23,13 @@ export const updateItemType = (payload: {
 }) => createAction(UPDATE_ITEM_TYPE, payload);
 
 const actions = {
+  UPDATE_SOCKETS,
   GET_RUNES,
   UPDATE_RUNES,
   UPDATE_ITEM_TYPE,
   getAllRunes,
   updateItemType,
+  updateSockets,
 };
 
 export default actions;

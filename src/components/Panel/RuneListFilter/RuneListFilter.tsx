@@ -1,4 +1,4 @@
-import { List, Theme } from "@mui/material";
+import { Grid, List, Theme } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React, { useMemo } from "react";
 import { useIntl } from "react-intl";
@@ -6,15 +6,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateRune } from "../../../store/filters/actions";
 import { AllRunesSelector } from "../../../store/filters/selectors";
 import { Rune, RuneItem } from "../../../types/rune";
+import FilterCategoryTitle from "../FilterCategoryTitle";
 import ListItemFilter from "../ListItemFilter";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     display: "flex",
     overflow: "auto",
+    paddingTop: "0px !important",
     [theme.breakpoints.up("md")]: {
       // width: 600,
     },
+  },
+  runeColumnAllField: {
+    // marginBottom: theme.spacing(1),
   },
   runeColumn: {
     width: "50%",
@@ -57,52 +62,61 @@ export default function RuneListFilter({ list }: RunesListProps) {
     });
   };
 
+  const title = intl.formatMessage({
+    id: "tableHeaders.tableHeaders",
+    defaultMessage: "Runes",
+  });
   return (
-    <List dense={false} className={classes.root}>
-      {partsRuneLists.map((list, index) => {
-        const isAnyFalse = list.find(({ name }) => runesStatus[name] === false);
+    <>
+      <FilterCategoryTitle title={title} />
+      <List dense={false} className={classes.root}>
+        {partsRuneLists.map((list, index) => {
+          const isAnyFalse = list.find(
+            ({ name }) => runesStatus[name] === false
+          );
 
-        const massCheckboxTitle = isAnyFalse
-          ? intl.formatMessage({
-              id: "other.selectAll",
-              defaultMessage: "all",
-            })
-          : intl.formatMessage({
-              id: "other.unselectAll",
-              defaultMessage: "all",
-            });
+          const massCheckboxTitle = isAnyFalse
+            ? intl.formatMessage({
+                id: "other.selectAll",
+                defaultMessage: "all",
+              })
+            : intl.formatMessage({
+                id: "other.unselectAll",
+                defaultMessage: "all",
+              });
 
-        return (
-          <div key={index} className={classes.runeColumn}>
-            <div style={{ width: 180 }}>
-              <ListItemFilter
-                name={`column-${index + 1}`}
-                checked={!isAnyFalse}
-                onChange={() =>
-                  signAllRunesInPart(index, isAnyFalse ? true : false)
-                }
-              >
-                {massCheckboxTitle}
-              </ListItemFilter>
+          return (
+            <div key={index} className={classes.runeColumn}>
+              <Grid className={classes.runeColumnAllField}>
+                <ListItemFilter
+                  name={`column-${index + 1}`}
+                  checked={!isAnyFalse}
+                  onChange={() =>
+                    signAllRunesInPart(index, isAnyFalse ? true : false)
+                  }
+                >
+                  {massCheckboxTitle}
+                </ListItemFilter>
+              </Grid>
+              {list.map(({ name, src }) => (
+                <ListItemFilter
+                  key={name}
+                  checked={runesStatus[name]}
+                  onChange={onChange}
+                  name={name}
+                >
+                  <img
+                    src={src}
+                    alt={name}
+                    style={{ width: 25, marginRight: 5 }}
+                  />
+                  {name}
+                </ListItemFilter>
+              ))}
             </div>
-            {list.map(({ name, src }) => (
-              <ListItemFilter
-                key={name}
-                checked={runesStatus[name]}
-                onChange={onChange}
-                name={name}
-              >
-                <img
-                  src={src}
-                  alt={name}
-                  style={{ width: 25, marginRight: 5 }}
-                />
-                {name}
-              </ListItemFilter>
-            ))}
-          </div>
-        );
-      })}
-    </List>
+          );
+        })}
+      </List>
+    </>
   );
 }

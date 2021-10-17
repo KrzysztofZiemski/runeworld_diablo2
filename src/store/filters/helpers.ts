@@ -4,6 +4,7 @@ import { Rune } from "../../types/rune";
 export enum FilterLocalStorage {
   runes = "runes",
   items = "items",
+  sockets = "sockets",
 }
 export class FilterRunesLocalStorage {
   private localStorage: FilterLocalStorage;
@@ -11,20 +12,29 @@ export class FilterRunesLocalStorage {
   constructor(localStorageName: FilterLocalStorage) {
     this.localStorage = localStorageName;
   }
+
+  public getStorage() {
+    const storage = localStorage.getItem(this.localStorage);
+    return storage ? JSON.parse(storage) : null;
+  }
   public getAll() {
-    const result = localStorage.getItem(this.localStorage);
-    return result ? JSON.parse(result) : {};
+    const result = this.getStorage();
+    return result !== null ? result : {};
   }
 
   public getItem(name: string) {
-    const allRunes = this.getAll();
-    return typeof allRunes[name] === "boolean" ? allRunes[name] : false;
+    const all = this.getAll();
+    return typeof all[name] === "boolean" ? all[name] : false;
   }
 
-  public setItem({ value, name }: { value: boolean; name: string }) {
-    const allRunes = this.getAll();
-    allRunes[name] = value;
-    localStorage.setItem(this.localStorage, JSON.stringify(allRunes));
+  public setItem({ value, name }: { value: boolean; name?: string }) {
+    if (name === undefined) {
+      localStorage.setItem(this.localStorage, JSON.stringify(value));
+    } else {
+      const all = this.getAll();
+      all[name] = value;
+      localStorage.setItem(this.localStorage, JSON.stringify(all));
+    }
   }
 }
 
@@ -54,4 +64,12 @@ export const initialItems = () => {
       ).getItem(item);
   });
   return output;
+};
+
+export const initialSockets = (): number => {
+  const value = new FilterRunesLocalStorage(
+    FilterLocalStorage.sockets
+  ).getStorage();
+
+  return value ? value : 0;
 };

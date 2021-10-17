@@ -17,7 +17,8 @@
     "Shields": "Shields",
     "Weapons": "Weapons",
     "MeleeWeapons": "Melee Weapons",
-    "MissileWeapons": "Missile Weapons"
+    "MissileWeapons": "Missile Weapons",
+    "allItems": "All Items"
   },
   "stats": {
     "1ToAllSkills": "+1 To All Skills",
@@ -626,6 +627,7 @@
   },
   "other": {
     "selectAll": "Select all",
-    "unselectAll": "Unselect all"
+    "unselectAll": "Unselect all",
+    "all": "All"
   }
 }
