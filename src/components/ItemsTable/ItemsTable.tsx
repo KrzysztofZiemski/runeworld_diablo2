@@ -18,10 +18,15 @@ import { Order } from "../../types/order";
 import { Items, items } from "../../utils/items";
 import { ItemFilters } from "./helpers";
 import { makeStyles } from "@mui/styles";
-import HeaderCell from "./HeaderCell";
+import Cell from "./Cell";
 
 const useStyles = makeStyles((theme: Theme) => ({
+  table: {
+    minWidth: 650,
+    border: `2px solid ${theme.palette.primary.main}`,
+  },
   row: {
+    border: `2px solid ${theme.palette.primary.main}`,
     "&:nth-of-type(odd)": {
       backgroundColor: theme.palette.action.hover,
     },
@@ -109,7 +114,7 @@ export default function ItemsTable() {
 
   return (
     <TableContainer component={Paper}>
-      <Table sx={{ minWidth: 650 }} aria-label="items table">
+      <Table className={classes.table} aria-label="items table">
         <TableHead className={classes.tableHead}>
           <TableRow>
             {headersIds.map((header) => {
@@ -121,7 +126,8 @@ export default function ItemsTable() {
                 header === ItemsTableHeaders.requiedLevel;
 
               return (
-                <HeaderCell
+                <Cell
+                  component="th"
                   key={header}
                   handleSort={isSortAvable ? handleSort : undefined}
                   text={text}
@@ -138,11 +144,11 @@ export default function ItemsTable() {
               key={name}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
-              <HeaderCell text={name} />
-              <HeaderCell text={allowed.join(", ")} />
-              <HeaderCell text={runes.join(", ")} />
-              <HeaderCell text={reqLvl} />
-              <HeaderCell text={statsList} />
+              <Cell text={name} />
+              <Cell text={allowed.join(", ")} />
+              <Cell text={runes.join(", ")} />
+              <Cell text={reqLvl} />
+              <Cell text={statsList} />
 
               {/* <TableCell component="th" scope="row">
                 {row.name}

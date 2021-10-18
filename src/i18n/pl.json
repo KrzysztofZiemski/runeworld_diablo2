@@ -1,5 +1,20 @@
 {
   "language": "Polski",
+  "title": "Diablo 2 Resurrected Runewords",
+  "tableHeaders": {
+    "name": "Name",
+    "allowedTypeItems": "Allowed Items",
+    "numberSockets": "Number Of Sockets",
+    "runes": "Runes",
+    "reqLvl": "Requied level",
+    "stats": "Statistics"
+  },
+  "other": {
+    "selectAll": "Select all",
+    "unselectAll": "Unselect all",
+    "all": "All",
+    "contact": "Contact"
+  },
   "ItemType": {
     "Polearms": "Polearms",
     "Katars": "Katars",
@@ -616,18 +631,5 @@
     "Black": "Black",
     "Strength": "Strength",
     "Silence": "Silence"
-  },
-  "tableHeaders": {
-    "name": "Name",
-    "allowedTypeItems": "Allowed Items",
-    "numberSockets": "Number Of Sockets",
-    "runes": "Runes",
-    "reqLvl": "Requied level",
-    "stats": "Statistics"
-  },
-  "other": {
-    "selectAll": "Select all",
-    "unselectAll": "Unselect all",
-    "all": "All"
   }
 }

@@ -1,29 +1,45 @@
-import { Grid, TableCell, Theme, Typography } from "@mui/material";
+import {
+  Grid,
+  TableCell,
+  TableCellBaseProps,
+  Theme,
+  Typography,
+} from "@mui/material";
 import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
 import { ItemsTableHeaders } from "./ItemsTable";
 import { makeStyles } from "@mui/styles";
+import { ElementType } from "react";
 
 const useStyles = makeStyles((theme: Theme) => ({
   cell: {
-    border: "1px solid black",
+    border: `2px solid ${theme.palette.primary.main}`,
+    "& th": {
+      border: "none !important",
+    },
+  },
+  th: {
+    border: "none",
   },
 }));
 
-interface HeaderCellProps {
+interface CellProps {
   handleSort?: (name: ItemsTableHeaders) => void;
   text: string | number | React.ReactNode;
   name?: ItemsTableHeaders;
+  component?: ElementType<TableCellBaseProps>;
 }
-export default function HeaderCell({
+export default function Cell({
   handleSort,
   text,
   name,
-}: HeaderCellProps) {
+  component = "td",
+}: CellProps) {
   const classes = useStyles();
   return handleSort && name ? (
     <TableCell
+      component={component}
       align="center"
-      className={classes.cell}
+      className={component === "th" ? classes.th : classes.cell}
       key={name}
       sx={{
         cursor: "pointer",
@@ -43,7 +59,12 @@ export default function HeaderCell({
       </Grid>
     </TableCell>
   ) : (
-    <TableCell key={name} className={classes.cell} align="center">
+    <TableCell
+      component={component}
+      key={name}
+      className={component === "th" ? classes.th : classes.cell}
+      align="center"
+    >
       {typeof text === "string" || typeof text === "number" ? (
         <Typography sx={{ whiteSpace: "nowrap" }}>{text} </Typography>
       ) : (
