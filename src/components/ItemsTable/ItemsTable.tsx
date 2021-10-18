@@ -66,7 +66,6 @@ export default function ItemsTable() {
   }, [runes, sockets, itemTypes, list]);
 
   const rows = listAfterFilter.map((el) => {
-    console.log(el.allowed);
     const allowed = el.allowed.map((itemType: any, index: number) =>
       intl.formatMessage({
         id: `ItemType.${itemType}`,
