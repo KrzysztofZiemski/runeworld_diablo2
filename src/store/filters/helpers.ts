@@ -22,9 +22,9 @@ export class FilterRunesLocalStorage {
     return result !== null ? result : {};
   }
 
-  public getItem(name: string) {
+  public getItem(name: string): boolean | undefined {
     const all = this.getAll();
-    return typeof all[name] === "boolean" ? all[name] : false;
+    return typeof all[name] === "boolean" ? all[name] : undefined;
   }
 
   public setItem({ value, name }: { value: boolean; name?: string }) {
@@ -41,11 +41,13 @@ export class FilterRunesLocalStorage {
 export const initialRunes = () => {
   const arrRune = Object.values(Rune);
   const output: any = {};
+
   arrRune.forEach((rune) => {
-    if (rune)
-      output[rune] = new FilterRunesLocalStorage(
-        FilterLocalStorage.runes
-      ).getItem(rune);
+    if (!rune) return;
+    const x = new FilterRunesLocalStorage(FilterLocalStorage.runes);
+    const itemFromStorage = x.getItem(rune);
+
+    output[rune] = itemFromStorage === undefined ? true : itemFromStorage;
   });
   return output;
 };
@@ -56,12 +58,12 @@ export const initialItems = () => {
     ...Object.values(WeaponName),
     ...Object.values(WeaponType),
   ];
-  const output: any = {};
+  const output: { [key: string]: boolean } = {};
+
   arrItems.forEach((item) => {
-    if (item)
-      output[item] = new FilterRunesLocalStorage(
-        FilterLocalStorage.items
-      ).getItem(item);
+    const x = new FilterRunesLocalStorage(FilterLocalStorage.items);
+    const itemFromStorage = x.getItem(item);
+    output[item] = itemFromStorage === undefined ? true : itemFromStorage;
   });
   return output;
 };

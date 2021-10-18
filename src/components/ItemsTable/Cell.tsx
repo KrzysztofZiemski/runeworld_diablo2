@@ -12,7 +12,7 @@ import { ElementType } from "react";
 
 const useStyles = makeStyles((theme: Theme) => ({
   cell: {
-    border: `2px solid ${theme.palette.primary.main}`,
+    border: `1px solid ${theme.palette.primary.main}`,
     "& th": {
       border: "none !important",
     },

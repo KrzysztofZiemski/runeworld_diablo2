@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   table: {
     minWidth: 650,
     border: `2px solid ${theme.palette.primary.main}`,
+    marginBottom: theme.spacing(2),
   },
   row: {
     border: `2px solid ${theme.palette.primary.main}`,
@@ -149,16 +150,9 @@ export default function ItemsTable() {
               <Cell text={runes.join(", ")} />
               <Cell text={reqLvl} />
               <Cell text={statsList} />
-
-              {/* <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell> */}
-              {/* <TableCell align="left">{row.allowed}</TableCell>
-              <TableCell align="left">{row.runes}</TableCell>
-              <TableCell align="left">{row.reqLvl}</TableCell>
-              <TableCell align="left">{row.statsList}</TableCell> */}
             </TableRow>
           ))}
+          <TableRow></TableRow>
         </TableBody>
       </Table>
     </TableContainer>
