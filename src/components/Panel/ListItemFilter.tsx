@@ -3,7 +3,10 @@ import React from "react";
 import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme: Theme) => ({
-  root: { width: "auto !important" },
+  root: {
+    width: "auto !important",
+    padding: `2px !important`,
+  },
   label: {
     "& .MuiTypography-root": {
       display: "flex",

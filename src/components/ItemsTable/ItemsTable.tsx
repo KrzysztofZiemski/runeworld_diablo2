@@ -42,6 +42,12 @@ const useStyles = makeStyles((theme: Theme) => ({
       color: theme.palette.common.white,
     },
   },
+  listStats: {
+    padding: "0px !important",
+    "& li": {
+      padding: 0,
+    },
+  },
 }));
 
 export enum ItemsTableHeaders {
@@ -84,7 +90,7 @@ export default function ItemsTable() {
     });
 
     const statsList = (
-      <List>
+      <List className={classes.listStats}>
         {el.stats.map(({ id, defaultMessage }) => (
           <ListItem key={id}>
             {intl.formatMessage({

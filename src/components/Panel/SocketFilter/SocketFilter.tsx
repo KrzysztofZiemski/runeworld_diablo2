@@ -12,7 +12,7 @@ import { SocketsSelector } from "../../../store/filters/selectors";
 import { useIntl } from "react-intl";
 import FilterCategoryTitle from "../FilterCategoryTitle";
 
-const options = [0, 1, 2, 3, 4, 5, 6];
+const options = [0, 2, 3, 4, 5, 6];
 
 export default function SocketFilter() {
   const intl = useIntl();
@@ -34,10 +34,10 @@ export default function SocketFilter() {
     <Grid>
       <FilterCategoryTitle title={label} />
       <FormControl sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="sockets-filter">{label}</InputLabel>
+        {/* <InputLabel id="sockets-filter">{label}</InputLabel> */}
         <Select
           id="sockets-filter"
-          label={label}
+          // label={label}
           value={sockets}
           onChange={onChange}
           variant="outlined"

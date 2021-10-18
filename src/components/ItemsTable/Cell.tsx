@@ -13,6 +13,7 @@ import { ElementType } from "react";
 const useStyles = makeStyles((theme: Theme) => ({
   cell: {
     border: `1px solid ${theme.palette.primary.main}`,
+    padding: `${theme.spacing(1)} !important`,
     "& th": {
       border: "none !important",
     },
