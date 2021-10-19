@@ -9,12 +9,13 @@ import ContentContainer from "./components/ContentContainer/ContentContainer";
 
 function App() {
   const settings = useSelector(AllSettingsStoreSelector);
+
   return (
     <div style={{ width: "100%", overflow: "hidden" }}>
       <IntlProvider
         messages={getMessages(settings.language)}
         locale={settings.language}
-        defaultLocale="pl"
+        defaultLocale="EN"
       >
         <Topbar />
         <ContentContainer>

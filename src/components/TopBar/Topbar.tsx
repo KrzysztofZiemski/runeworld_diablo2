@@ -1,7 +1,20 @@
-import { AppBar, Theme, Toolbar, Typography, IconButton } from "@mui/material";
+import {
+  AppBar,
+  Theme,
+  Toolbar,
+  Typography,
+  IconButton,
+  Select,
+  MenuItem,
+  SelectChangeEvent,
+} from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { useIntl } from "react-intl";
 import MailIcon from "@mui/icons-material/Mail";
+import { useDispatch, useSelector } from "react-redux";
+import { changeLanguage } from "../../store/appConfig/actions";
+import { Language } from "../../types/language";
+import { AllSettingsStoreSelector } from "../../store/appConfig/selectors";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -18,11 +31,22 @@ const useStyles = makeStyles((theme: Theme) => ({
       marginLeft: 5,
     },
   },
+  language: {
+    width: 40,
+    backgroundColor: theme.palette.common.white,
+  },
 }));
 
 export default function Topbar() {
   const classes = useStyles();
   const intl = useIntl();
+  const dispatch = useDispatch();
+  const setting = useSelector(AllSettingsStoreSelector);
+
+  const handleLanguageChange = (e: SelectChangeEvent<HTMLSelectElement>) => {
+    const value = e.target.value as Language;
+    dispatch(changeLanguage(value));
+  };
 
   return (
     <AppBar position="static" className={classes.root}>
@@ -46,6 +70,21 @@ export default function Topbar() {
           <MailIcon />
           <Typography sx={{ marginLeft: 2 }}>k.b.ziemski@gmail.com</Typography>
         </IconButton>
+        {/* @ts-ignore */}
+        <Select onChange={handleLanguageChange} value={setting.language}>
+          <MenuItem value={Language.PL}>
+            {intl.formatMessage({
+              id: "language.pl",
+              defaultMessage: "PL",
+            })}
+          </MenuItem>
+          <MenuItem value={Language.EN}>
+            {intl.formatMessage({
+              id: "language.en",
+              defaultMessage: "EN",
+            })}
+          </MenuItem>
+        </Select>
       </Toolbar>
     </AppBar>
   );

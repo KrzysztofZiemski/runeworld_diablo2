@@ -1,16 +1,16 @@
+import { Language } from "../../types/language";
 import { createAction } from "../createActions";
 
 export const appConfigStoreName = `APP_CONFIG`;
 
-export const GET = `${appConfigStoreName} GET`;
-export const UPDATE = `${appConfigStoreName} UPDATE`;
+export const UPDATE_LANGUAGE = `${appConfigStoreName} UPDATE`;
 
-export const getAllSettings = () => createAction(GET);
+export const changeLanguage = (payload: Language) =>
+  createAction(UPDATE_LANGUAGE, payload);
 
 const actions = {
-  GET,
-  UPDATE,
-  getAllSettings,
+  UPDATE_LANGUAGE,
+  changeLanguage,
 };
 
 export default actions;

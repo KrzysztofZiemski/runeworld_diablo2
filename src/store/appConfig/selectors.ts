@@ -1,9 +1,9 @@
-import { Settings } from "./reducer";
+import { AppConfig } from "./reducer";
 import { createSelector } from "reselect";
 
 import { appConfigStoreName } from "./actions";
 
 export const AllSettingsStoreSelector = createSelector(
   (state) => state,
-  (state: any): Settings => state[appConfigStoreName]
+  (state: any): AppConfig => state[appConfigStoreName]
 );

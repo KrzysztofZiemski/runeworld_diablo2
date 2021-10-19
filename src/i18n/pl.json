@@ -1,5 +1,8 @@
 {
-  "language": "Polski",
+  "language": {
+    "pl": "PL",
+    "en": "EN"
+  },
   "title": "Diablo 2 Resurrected Runewords",
   "tableHeaders": {
     "name": "Name",

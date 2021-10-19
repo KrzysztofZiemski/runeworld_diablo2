@@ -52,9 +52,10 @@ export default function RuneListFilter() {
   };
 
   const title = intl.formatMessage({
-    id: "tableHeaders.tableHeaders",
+    id: "tableHeaders.runes",
     defaultMessage: "Runes",
   });
+
   return (
     <>
       <FilterCategoryTitle title={title} />

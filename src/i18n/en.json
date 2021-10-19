@@ -1,5 +1,23 @@
 {
-  "language": "Polski",
+  "language": {
+    "pl": "PL",
+    "en": "EN"
+  },
+  "title": "Diablo 2 Resurrected Runewords",
+  "tableHeaders": {
+    "name": "Name",
+    "allowedTypeItems": "Allowed Items",
+    "numberSockets": "Number Of Sockets",
+    "runes": "Runes",
+    "reqLvl": "Requied level",
+    "stats": "Statistics"
+  },
+  "other": {
+    "selectAll": "Select all",
+    "unselectAll": "Unselect all",
+    "all": "All",
+    "contact": "Contact"
+  },
   "ItemType": {
     "Polearms": "Polearms",
     "Katars": "Katars",
@@ -9,7 +27,7 @@
     "Clubs": "Clubs",
     "Scepters": "Scepters",
     "Maces": "Maces",
-    "Wands": "Wands",
+    "Wand": "Wand",
     "Staves": "Staves",
     "BodyArmor": "Body Armor",
     "Helms": "Helms",
@@ -17,7 +35,8 @@
     "Shields": "Shields",
     "Weapons": "Weapons",
     "MeleeWeapons": "Melee Weapons",
-    "MissileWeapons": "Missile Weapons"
+    "MissileWeapons": "Missile Weapons",
+    "allItems": "All Items"
   },
   "stats": {
     "1ToAllSkills": "+1 To All Skills",
@@ -615,17 +634,5 @@
     "Black": "Black",
     "Strength": "Strength",
     "Silence": "Silence"
-  },
-  "tableHeaders": {
-    "name": "Name",
-    "allowedTypeItems": "Allowed Items",
-    "numberSockets": "Number Of Sockets",
-    "runes": "Runes",
-    "requiedLevel": "requied level",
-    "stats": "Statistics"
-  },
-  "other": {
-    "selectAll": "Select all",
-    "unselectAll": "Unselect all"
   }
 }

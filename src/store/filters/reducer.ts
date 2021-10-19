@@ -1,12 +1,7 @@
 import { Action } from "../createActions";
+import { FilterRunesLocalStorage, FilterLocalStorage } from "../localStorage";
 import actions from "./actions";
-import {
-  FilterLocalStorage,
-  FilterRunesLocalStorage,
-  initialItems,
-  initialRunes,
-  initialSockets,
-} from "./helpers";
+import { initialItems, initialRunes, initialSockets } from "./helpers";
 
 export type FiltersState = {
   runes: { [key: string]: boolean };
