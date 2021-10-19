@@ -1,7 +1,6 @@
 import {
   FormControl,
   Grid,
-  InputLabel,
   MenuItem,
   Select,
   SelectChangeEvent,
@@ -24,7 +23,7 @@ export default function SocketFilter() {
     const payload = value;
     dispatch(updateSockets(payload));
   };
-  // /tableHeaders
+
   const label = intl.formatMessage({
     id: "tableHeaders.numberSockets",
     defaultMessage: "Number Of Sockets",
@@ -34,10 +33,8 @@ export default function SocketFilter() {
     <Grid>
       <FilterCategoryTitle title={label} />
       <FormControl sx={{ m: 1, minWidth: 120 }}>
-        {/* <InputLabel id="sockets-filter">{label}</InputLabel> */}
         <Select
           id="sockets-filter"
-          // label={label}
           value={sockets}
           onChange={onChange}
           variant="outlined"
