@@ -3,7 +3,7 @@
     "pl": "PL",
     "en": "EN"
   },
-  "title": "Diablo 2 Resurrected Runewords",
+  "title": "Diablo 2 Resurrected - Runewords",
   "tableHeaders": {
     "name": "Name",
     "allowedTypeItems": "Allowed Items",
@@ -185,7 +185,7 @@
     "3ToAllSkills": "+3 To All Skills",
     "40%FasterCastRate": "+40% Faster Cast Rate",
     "75%DamageToDemons": "+75% Damage To Demons",
-    "100ToAttackRatingAgainstDemonsAdds314ColdDamage,3secDuration": "+100 To Attack Rating Against DemonsAdds 3-14 Cold Damage, 3 sec.Duration",
+    "Adds314ColdDamage3secDuration": "Adds 3-14 Cold Damage, 3 sec.Duration",
     "7%ManaStolenPerHit": "7% Mana Stolen Per Hit",
     "ReplenishLife20": "Replenish Life +20",
     "IncreaseMaximumMana15%": "Increase Maximum Mana 15%",
@@ -520,7 +520,8 @@
     "160%EnhancedDamage": "+160% Enhanced Damage",
     "9toMinimumDamage": "+9 to Minimum Damage",
     "9toMaximumDamage": "+9 to Maximum Damage",
-    "25%DeadlyStrike250toAttackRating": "25% Deadly Strike +250 to Attack Rating",
+    "25%DeadlyStrike": "25% Deadly Strike",
+    "250toAttackRating": "+250 to Attack Rating",
     "1toAllSkills": "+1 to All Skills",
     "7%LifeStolenperHit": "7% Life Stolen per Hit",
     "10ReplenishLife": "+10 Replenish Life",

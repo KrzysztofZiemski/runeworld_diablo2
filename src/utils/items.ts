@@ -870,9 +870,13 @@ export const items: Items[] = [
         defaultMessage: "+75% Damage To Demons",
       },
       {
-        id: "stats.100ToAttackRatingAgainstDemonsAdds314ColdDamage,3secDuration",
+        id: "stats.100ToAttackRatingAgainstDemons",
         defaultMessage:
           "+100 To Attack Rating Against DemonsAdds 3-14 Cold Damage, 3 sec.Duration",
+      },
+      {
+        id: "stats.Adds314ColdDamage3secDuration",
+        defaultMessage: "Adds 3-14 Cold Damage, 3 sec.Duration",
       },
       {
         id: "stats.7%ManaStolenPerHit",
@@ -3404,8 +3408,12 @@ export const items: Items[] = [
         defaultMessage: "+9 to Maximum Damage",
       },
       {
-        id: "stats.25%DeadlyStrike250toAttackRating",
-        defaultMessage: "25% Deadly Strike +250 to Attack Rating",
+        id: "stats.25%DeadlyStrike",
+        defaultMessage: "25% Deadly Strike",
+      },
+      {
+        id: "stats.250toAttackRating",
+        defaultMessage: "+250 to Attack Rating",
       },
       {
         id: "stats.1toAllSkills",

@@ -48,6 +48,9 @@ const useStyles = makeStyles((theme: Theme) => ({
       padding: 0,
     },
   },
+  statsListItem: {
+    textTransform: "capitalize",
+  },
 }));
 
 export enum ItemsTableHeaders {
@@ -92,7 +95,7 @@ export default function ItemsTable() {
     const statsList = (
       <List className={classes.listStats}>
         {el.stats.map(({ id, defaultMessage }) => (
-          <ListItem key={id}>
+          <ListItem key={id} className={classes.statsListItem}>
             {intl.formatMessage({
               id,
               defaultMessage,
