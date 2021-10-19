@@ -48,7 +48,9 @@ export default function Cell({
       }}
       onClick={() => handleSort(name)}
     >
-      <Grid sx={{ display: "flex", alignItems: "center" }}>
+      <Grid
+        sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+      >
         {typeof text === "string" || typeof text === "number" ? (
           <Typography sx={{ whiteSpace: "nowrap", marginRight: 2 }}>
             {text}

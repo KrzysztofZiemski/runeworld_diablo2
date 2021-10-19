@@ -32,8 +32,12 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
   },
   language: {
-    width: 40,
+    width: 67,
+    padding: "0px !important",
     backgroundColor: theme.palette.common.white,
+    "& .MuiSelect-select": {
+      padding: theme.spacing(1),
+    },
   },
 }));
 
@@ -70,8 +74,13 @@ export default function Topbar() {
           <MailIcon />
           <Typography sx={{ marginLeft: 2 }}>k.b.ziemski@gmail.com</Typography>
         </IconButton>
-        {/* @ts-ignore */}
-        <Select onChange={handleLanguageChange} value={setting.language}>
+        <Select
+          // IconComponent={<span></span>}
+          onChange={handleLanguageChange}
+          //  @ts-ignore
+          value={setting.language}
+          className={classes.language}
+        >
           <MenuItem value={Language.PL}>
             {intl.formatMessage({
               id: "language.pl",
