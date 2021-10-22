@@ -7,15 +7,14 @@ type Stat = {
   defaultMessage: string;
 };
 
-export type Items = {
+export type Item = {
   name: string;
   allowed: Allowed[] | string[];
   runes: Rune[] | string[];
   reqLvl: number;
   stats: Stat[];
 };
-
-export const items: Items[] = [
+export const items: Item[] = [
   {
     name: "Splendor",
     reqLvl: 37,

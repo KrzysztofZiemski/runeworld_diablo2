@@ -1,8 +1,8 @@
-import { Items } from "../../utils/items";
+import { Item } from "../../utils/items";
 
 export class ItemFilters {
   items;
-  constructor(items: Items[]) {
+  constructor(items: Item[]) {
     this.items = items;
   }
 
