@@ -1,5 +1,6 @@
 import {
   Button,
+  Card,
   Grid,
   List,
   ListItem,
@@ -8,14 +9,33 @@ import {
   Typography,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
+import { useIntl } from "react-intl";
 import { SortConfig } from "../../hooks/useSort";
+import { FilterFields } from "../../types/filter";
 import { Order } from "../../types/order";
 import { Row } from "./ItemsBody";
 
 //@ts-ignore
 const useStyles = makeStyles((theme: Theme) => ({
+  filter: {
+    display: "flex",
+    justifyContent: "space-evenly",
+    alignItems: "center",
+    flexWrap: "wrap",
+    margin: `0 ${theme.spacing(1)} !important`,
+    padding: `${theme.spacing(1)} !important`,
+  },
+  filterButtonContainer: {
+    flexGrow: 1,
+    display: "flex",
+    justifyContent: "space-evenly",
+  },
+  filterButton: {
+    flexShink: 0,
+    whiteSpace: "nowrap",
+  },
   list: {
-    padding: `${theme.spacing(2)} !important`,
+    padding: `${theme.spacing(1)} !important`,
     "& li": {
       backgroundColor: `${theme.palette.grey} !important`,
     },
@@ -62,6 +82,7 @@ export default function ItemsTableDesktop({
   config: SortConfig;
 }) {
   const classes = useStyles();
+  const intl = useIntl();
 
   const handleSort = (nameField: string) => {
     const newOrdet =
@@ -76,14 +97,44 @@ export default function ItemsTableDesktop({
       order: newOrdet,
     });
   };
+  const FilterByNameText = intl.formatMessage({
+    id: `tableHeaders.${FilterFields.name}`,
+  });
+  const FilterByNameLvlText = intl.formatMessage({
+    id: `tableHeaders.${FilterFields.reqLvl}`,
+  });
 
   return (
     <>
-      <Grid>
-        <Typography>Sortuj:</Typography>
-        <Button onClick={() => handleSort("name")}>Nazwa</Button>
-        <Button onClick={() => handleSort("reqLvl")}>Lewel</Button>
-      </Grid>
+      <Card className={classes.filter} elevation={3}>
+        <Typography>
+          {intl.formatMessage({
+            id: "other.filter",
+            defaultMessage: "Filter",
+          })}
+          :{" "}
+        </Typography>
+        <Grid className={classes.filterButtonContainer}>
+          <Button
+            className={classes.filterButton}
+            variant={
+              config?.field === FilterFields.name ? "contained" : "outlined"
+            }
+            onClick={() => handleSort(FilterFields.name)}
+          >
+            {FilterByNameText}
+          </Button>
+          <Button
+            className={classes.filterButton}
+            variant={
+              config?.field === FilterFields.reqLvl ? "contained" : "outlined"
+            }
+            onClick={() => handleSort(FilterFields.reqLvl)}
+          >
+            {FilterByNameLvlText}
+          </Button>
+        </Grid>
+      </Card>
       <List className={classes.list}>
         {rows.map(({ name, allowed, reqLvl, stats, runes, sockets }, index) => {
           return (

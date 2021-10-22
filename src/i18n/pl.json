@@ -16,7 +16,8 @@
     "selectAll": "Zaznacz Wszystkie",
     "unselectAll": "Odznacz Wszystkie",
     "all": "Wszystkie",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "filter": "Filtruj"
   },
   "ItemType": {
     "Polearms": "Broń Drzewcowa",

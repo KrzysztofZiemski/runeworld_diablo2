@@ -16,7 +16,8 @@
     "selectAll": "Select all",
     "unselectAll": "Unselect all",
     "all": "All",
-    "contact": "Contact"
+    "contact": "Contact",
+    "filter": "Filter"
   },
   "ItemType": {
     "Polearms": "Polearms",
