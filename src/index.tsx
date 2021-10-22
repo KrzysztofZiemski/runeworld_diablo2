@@ -8,6 +8,7 @@ import CustomThemeProvider from "./styles/theme";
 
 import "./styles/fonts.css";
 import "./styles/normalize.css";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -20,4 +21,5 @@ ReactDOM.render(
   document.getElementById("root")
 );
 
+serviceWorkerRegistration.register();
 reportWebVitals();
