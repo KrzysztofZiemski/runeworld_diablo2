@@ -606,7 +606,59 @@ export const items: Items[] = [
   {
     name: "Spirit",
     reqLvl: 25,
-    allowed: ["Swords", "Shields"],
+    allowed: ["Shields"],
+    stats: [
+      {
+        id: "stats.2ToAllSkills",
+        defaultMessage: "+2 To All Skills",
+      },
+      {
+        id: "stats.2535%FasterCastRate",
+        defaultMessage: "+25-35% Faster Cast Rate",
+      },
+      {
+        id: "stats.55%FasterHitRecovery",
+        defaultMessage: "+55% Faster Hit Recovery",
+      },
+      {
+        id: "stats.ColdResist35",
+        defaultMessage: "Cold Resist +35%",
+      },
+      {
+        id: "stats.LightningResist35",
+        defaultMessage: "Lightning Resist +35%",
+      },
+      {
+        id: "stats.PoisonResist35",
+        defaultMessage: "Poison Resist +35%",
+      },
+      {
+        id: "stats.250DefenseVsMissile",
+        defaultMessage: "+250 Defense Vs. Missile",
+      },
+      {
+        id: "stats.22ToVitality",
+        defaultMessage: "+22 To Vitality",
+      },
+      {
+        id: "stats.89112ToMana",
+        defaultMessage: "+89-112 To Mana",
+      },
+      {
+        id: "stats.38MagicAbsorb",
+        defaultMessage: "+3-8 Magic Absorb",
+      },
+      {
+        id: "stats.AttackerTakesDamageof14",
+        defaultMessage: "Attacker Takes Damage of 14",
+      },
+    ],
+    runes: ["Tal", "Thul", "Ort", "Amn"],
+  },
+  {
+    name: "Spirit",
+    reqLvl: 25,
+    allowed: ["Swords"],
     stats: [
       {
         id: "stats.2ToAllSkills",
@@ -652,10 +704,10 @@ export const items: Items[] = [
         id: "stats.38MagicAbsorb",
         defaultMessage: "+3-8 Magic Absorb",
       },
-      {
-        id: "stats.AttackerTakesDamageof14",
-        defaultMessage: "Attacker Takes Damage of 14",
-      },
+      // {
+      //   id: "stats.AttackerTakesDamageof14",
+      //   defaultMessage: "Attacker Takes Damage of 14",
+      // },
     ],
     runes: ["Tal", "Thul", "Ort", "Amn"],
   },
@@ -698,7 +750,55 @@ export const items: Items[] = [
   {
     name: "Dream",
     reqLvl: 65,
-    allowed: ["Helms", "Shields"],
+    allowed: ["Shields"],
+    stats: [
+      {
+        id: "stats.10%ChanceToCastLevel15ConfuseWhenStruck",
+        defaultMessage: "10% Chance To Cast Level 15 Confuse When Struck",
+      },
+      {
+        id: "stats.Level15HolyShockAuraWhenEquipped",
+        defaultMessage: "Level 15 Holy Shock Aura When Equipped",
+      },
+      {
+        id: "stats.2030%FasterHitRecovery",
+        defaultMessage: "+20-30% Faster Hit Recovery",
+      },
+      {
+        id: "stats.30%EnhancedDefense",
+        defaultMessage: "+30% Enhanced Defense",
+      },
+      {
+        id: "stats.150220Defense",
+        defaultMessage: "+150-220 Defense",
+      },
+      {
+        id: "stats.10ToVitality",
+        defaultMessage: "+10 To Vitality",
+      },
+      {
+        id: "stats.50ToLifeShieldsOnly",
+        defaultMessage: "+50 To Life (Shields Only)",
+      },
+      {
+        id: "stats.062561875ToManaBasedOnCharacterLevel",
+        defaultMessage: "+0.625-61.875 To Mana (Based On Character Level)",
+      },
+      {
+        id: "stats.AllResistances520",
+        defaultMessage: "All Resistances +5-20",
+      },
+      {
+        id: "stats.1225%BetterChanceofGettingMagicItems",
+        defaultMessage: "12-25% Better Chance of Getting Magic Items",
+      },
+    ],
+    runes: ["Io", "Jah", "Pul"],
+  },
+  {
+    name: "Dream",
+    reqLvl: 65,
+    allowed: ["Helms"],
     stats: [
       {
         id: "stats.10%ChanceToCastLevel15ConfuseWhenStruck",
@@ -729,10 +829,6 @@ export const items: Items[] = [
         defaultMessage: "Increase Maximum Life 5% (Helms Only)",
       },
       {
-        id: "stats.50ToLifeShieldsOnly",
-        defaultMessage: "+50 To Life (Shields Only)",
-      },
-      {
         id: "stats.062561875ToManaBasedOnCharacterLevel",
         defaultMessage: "+0.625-61.875 To Mana (Based On Character Level)",
       },
@@ -750,7 +846,7 @@ export const items: Items[] = [
   {
     name: "Fortitude",
     reqLvl: 59,
-    allowed: ["Weapons", "BodyArmor"],
+    allowed: ["Weapons"],
     stats: [
       {
         id: "stats.20%ChanceToCastLevel15ChillingArmorwhenStruck",
@@ -800,6 +896,63 @@ export const items: Items[] = [
       {
         id: "stats.1ToLightRadius",
         defaultMessage: "+1 To Light Radius",
+      },
+    ],
+    runes: ["El", "Sol", "Dol", "Lo"],
+  },
+  {
+    name: "Fortitude",
+    reqLvl: 59,
+    allowed: ["Weapons", "BodyArmor"],
+    stats: [
+      {
+        id: "stats.20%ChanceToCastLevel15ChillingArmorwhenStruck",
+        defaultMessage:
+          "20% Chance To Cast Level 15 Chilling Armor when Struck",
+      },
+      {
+        id: "stats.25%FasterCastRate",
+        defaultMessage: "+25% Faster Cast Rate",
+      },
+      {
+        id: "stats.300%EnhancedDamage",
+        defaultMessage: "+300% Enhanced Damage",
+      },
+      {
+        id: "stats.200%EnhancedDefense",
+        defaultMessage: "+200% Enhanced Defense",
+      },
+      {
+        id: "stats.XToLifeBasedonCharacterLevel",
+        defaultMessage: "+X To Life (Based on Character Level)",
+      },
+      {
+        id: "stats.AllResistances2530",
+        defaultMessage: "All Resistances +25-30",
+      },
+      {
+        id: "stats.12%DamageTakenGoesToMana",
+        defaultMessage: "12% Damage Taken Goes To Mana",
+      },
+      {
+        id: "stats.1ToLightRadius",
+        defaultMessage: "+1 To Light Radius",
+      },
+      {
+        id: "stats.15Defense",
+        defaultMessage: "+15 Defense",
+      },
+      {
+        id: "stats.ReplenishLife7",
+        defaultMessage: "Replenish Life +7",
+      },
+      {
+        id: "stats.5ToMaximumLightningResist",
+        defaultMessage: "+5% To Maximum Lightning Resist",
+      },
+      {
+        id: "stats.DamageReducedBy7",
+        defaultMessage: "Damage Reduced By 7",
       },
     ],
     runes: ["El", "Sol", "Dol", "Lo"],
@@ -2166,7 +2319,7 @@ export const items: Items[] = [
   {
     name: "Dragon",
     reqLvl: 61,
-    allowed: ["Shields", "BodyArmor"],
+    allowed: ["BodyArmor"],
     stats: [
       {
         id: "stats.20%ChancetoCastLevel18VenomWhenStruck",
@@ -2199,6 +2352,50 @@ export const items: Items[] = [
       {
         id: "stats.IncreaseMaximumMana5%ArmorOnly",
         defaultMessage: "Increase Maximum Mana 5% (Armor Only)",
+      },
+      {
+        id: "stats.5%ToMaximumLightningResist",
+        defaultMessage: "+5% To Maximum Lightning Resist",
+      },
+      {
+        id: "stats.DamageReducedby7",
+        defaultMessage: "Damage Reduced by 7",
+      },
+    ],
+    runes: ["Sur", "Lo", "Sol"],
+  },
+  {
+    name: "Dragon",
+    reqLvl: 61,
+    allowed: ["Shields"],
+    stats: [
+      {
+        id: "stats.20%ChancetoCastLevel18VenomWhenStruck",
+        defaultMessage: "20% Chance to Cast Level 18 Venom When Struck",
+      },
+      {
+        id: "stats.12%ChanceToCastLevel15HydraOnStriking",
+        defaultMessage: "12% Chance To Cast Level 15 Hydra On Striking",
+      },
+      {
+        id: "stats.Level14HolyFireAuraWhenEquipped",
+        defaultMessage: "Level 14 Holy Fire Aura When Equipped",
+      },
+      {
+        id: "stats.360Defense",
+        defaultMessage: "+360 Defense",
+      },
+      {
+        id: "stats.230DefensevsMissile",
+        defaultMessage: "+230 Defense vs. Missile",
+      },
+      {
+        id: "stats.35ToAllAttributes",
+        defaultMessage: "+3-5 To All Attributes",
+      },
+      {
+        id: "stats.037537125ToStrengthBasedonCharacterLevel",
+        defaultMessage: "+0.375-37.125 To Strength (Based on Character Level)",
       },
       {
         id: "stats.50ToManaShieldsOnly",

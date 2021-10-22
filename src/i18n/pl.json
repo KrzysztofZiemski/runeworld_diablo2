@@ -39,6 +39,11 @@
     "allItems": "Wszystkie Przedmioty"
   },
   "stats": {
+    "15Defense": "+15 Do Obrony",
+    "5ToMaximumLightningResist": "+5% Do Maksymalnej Odporności Na Błyskawice",
+    "ColdResist35": "Odporność na Zimno +35%",
+    "LightningResist35": "Odporność na Błyskawice +35%",
+    "PoisonResist35": "Odporność na Trucizny +35%",
     "1ToAllSkills": "+1 Do Wszystkich Umiejętności",
     "10%FasterCastRate": "+10% Szybsze Rzucanie Czarów",
     "20%FasterBlockRate": "+20% Szybszy Blok",

@@ -94,7 +94,7 @@ export default function ItemsTable() {
 
     const statsList = (
       <List className={classes.listStats}>
-        {el.stats.map(({ id, defaultMessage }) => (
+        {el.stats.map(({ id, defaultMessage }, index) => (
           <ListItem key={id} className={classes.statsListItem}>
             {intl.formatMessage({
               id,
@@ -148,10 +148,10 @@ export default function ItemsTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map(({ name, allowed, reqLvl, statsList, runes }) => (
+          {rows.map(({ name, allowed, reqLvl, statsList, runes }, index) => (
             <TableRow
               className={classes.row}
-              key={name}
+              key={name + index}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               <Cell text={name} />

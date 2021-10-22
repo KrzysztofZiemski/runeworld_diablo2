@@ -39,6 +39,11 @@
     "allItems": "All Items"
   },
   "stats": {
+    "15Defense": "+15 Defense",
+    "5ToMaximumLightningResist": "+5% To Maximum Lightning Resist",
+    "ColdResist35": "Cold Resist +35%",
+    "LightningResist35": "Lightning Resist +35%",
+    "PoisonResist35": "Poison Resist +35%",
     "1ToAllSkills": "+1 To All Skills",
     "10%FasterCastRate": "+10% Faster Cast Rate",
     "20%FasterBlockRate": "+20% Faster Block Rate",
