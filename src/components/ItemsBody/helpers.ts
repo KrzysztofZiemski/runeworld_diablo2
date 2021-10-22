@@ -1,4 +1,4 @@
-import { Items } from "./../../utils/items";
+import { Items } from "../../utils/items";
 
 export class ItemFilters {
   items;

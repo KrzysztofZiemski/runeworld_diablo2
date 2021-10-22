@@ -81,13 +81,15 @@ export default function ItemsTable() {
   }, [runes, sockets, itemTypes, list]);
 
   const rows = listAfterFilter.map((el) => {
-    const allowed = el.allowed.map((itemType: any, index: number) =>
-      intl.formatMessage({
-        id: `ItemType.${itemType}`,
-      })
-    );
+    const allowed = el.allowed
+      .map((itemType: any, index: number) =>
+        intl.formatMessage({
+          id: `ItemType.${itemType}`,
+        })
+      )
+      .join(", ");
 
-    const runes = el.runes;
+    const runes = el.runes.join(", ");
     const name = intl.formatMessage({
       id: `items.${el.name}`,
     });
@@ -155,8 +157,8 @@ export default function ItemsTable() {
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               <Cell text={name} />
-              <Cell text={allowed.join(", ")} />
-              <Cell text={runes.join(", ")} />
+              <Cell text={allowed} />
+              <Cell text={runes} />
               <Cell text={reqLvl} />
               <Cell text={statsList} />
             </TableRow>

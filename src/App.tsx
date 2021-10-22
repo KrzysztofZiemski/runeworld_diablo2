@@ -3,7 +3,7 @@ import { AllSettingsStoreSelector } from "./store/appConfig/selectors";
 import { IntlProvider } from "react-intl";
 import { getMessages } from "./i18n/i18n";
 import Panel from "./components/Panel/Panel";
-import ItemsTable from "./components/ItemsTable/ItemsTable";
+import ItemsBody from "./components/ItemsBody/ItemsBody";
 import Topbar from "./components/TopBar/Topbar";
 import ContentContainer from "./components/ContentContainer/ContentContainer";
 
@@ -11,7 +11,9 @@ function App() {
   const settings = useSelector(AllSettingsStoreSelector);
 
   return (
-    <div style={{ width: "100%", overflow: "hidden" }}>
+    <div
+      style={{ width: "100%", overflow: "hidden", backgroundColor: "#f3f3f3" }}
+    >
       <IntlProvider
         messages={getMessages(settings.language)}
         locale={settings.language}
@@ -20,7 +22,7 @@ function App() {
         <Topbar />
         <ContentContainer>
           <Panel />
-          <ItemsTable />
+          <ItemsBody />
         </ContentContainer>
       </IntlProvider>
     </div>
