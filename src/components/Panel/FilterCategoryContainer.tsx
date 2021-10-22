@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     margin: theme.spacing(1),
     padding: theme.spacing(1),
     overflow: "auto",
+    flexGrow: 1,
   },
 }));
 export default function FilterCategoryContainer({
@@ -15,9 +16,5 @@ export default function FilterCategoryContainer({
   children: React.ReactNode;
 }) {
   const classes = useStyles();
-  return (
-    <Paper elevation={3} className={classes.root}>
-      {children}
-    </Paper>
-  );
+  return <Paper className={classes.root}>{children}</Paper>;
 }

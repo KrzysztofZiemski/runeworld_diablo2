@@ -14,12 +14,21 @@ import ListItemFilter from "../ListItemFilter";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    display: "flex",
-    flexDirection: "row",
-    overflow: "auto",
+    [theme.breakpoints.up("sm")]: {
+      display: "flex",
+      flexDirection: "row",
+    },
   },
   list: {
-    paddingTop: "0px !important",
+    flexGrow: 1,
+    marginTop: `${theme.spacing(2)} !important`,
+    justifyContent: "space-between",
+    borderTop: `3px solid ${theme.palette.primary.main}`,
+    [theme.breakpoints.up("sm")]: {
+      borderTop: "none",
+      margin: `0px !important`,
+      padding: `0px !important`,
+    },
   },
 }));
 

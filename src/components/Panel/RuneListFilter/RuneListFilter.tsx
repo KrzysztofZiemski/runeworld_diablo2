@@ -20,16 +20,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   root: {
     display: "flex",
     paddingTop: "0px !important",
-  },
-  runeColumn: {
-    width: "50%",
-    borderRight: "1px solid black",
-    "&:last-child": {
-      borderRight: "none",
-    },
-    [theme.breakpoints.up("md")]: {
-      borderRight: "none",
-    },
+    justifyContent: "space-between",
   },
 }));
 
@@ -57,7 +48,7 @@ export default function RuneListFilter() {
   });
 
   return (
-    <>
+    <Grid>
       <FilterCategoryTitle title={title} />
       <List dense={false} className={classes.root}>
         {partsRuneLists.map((list, index) => {
@@ -65,19 +56,14 @@ export default function RuneListFilter() {
             ({ name }) => runesStatus[name] === false
           );
 
-          const massCheckboxTitle = isAnyFalse
-            ? intl.formatMessage({
-                id: "other.all",
-                defaultMessage: "all",
-              })
-            : intl.formatMessage({
-                id: "other.all",
-                defaultMessage: "all",
-              });
+          const massCheckboxTitle = intl.formatMessage({
+            id: "other.all",
+            defaultMessage: "all",
+          });
 
           return (
-            <div key={index} className={classes.runeColumn}>
-              <Grid style={{ width: 150 }}>
+            <div key={index}>
+              <Grid>
                 <ListItemFilter
                   name={`column-${index + 1}`}
                   checked={!isAnyFalse}
@@ -107,6 +93,6 @@ export default function RuneListFilter() {
           );
         })}
       </List>
-    </>
+    </Grid>
   );
 }
