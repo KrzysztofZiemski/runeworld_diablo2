@@ -902,7 +902,7 @@ export const items: Item[] = [
   {
     name: "Fortitude",
     reqLvl: 59,
-    allowed: ["Weapons", "BodyArmor"],
+    allowed: ["BodyArmor"],
     stats: [
       {
         id: "stats.20%ChanceToCastLevel15ChillingArmorwhenStruck",
