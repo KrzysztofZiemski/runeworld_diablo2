@@ -3,18 +3,18 @@ import {
   Theme,
   Toolbar,
   Typography,
-  IconButton,
   Select,
   MenuItem,
   SelectChangeEvent,
+  Hidden,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { useIntl } from "react-intl";
-import MailIcon from "@mui/icons-material/Mail";
 import { useDispatch, useSelector } from "react-redux";
 import { changeLanguage } from "../../store/appConfig/actions";
 import { Language } from "../../types/language";
 import { AllSettingsStoreSelector } from "../../store/appConfig/selectors";
+import MainContact from "../MainContact/MainContact";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   language: {
     width: 67,
     padding: "0px !important",
+    marginLeft: 2,
     backgroundColor: theme.palette.common.white,
     "& .MuiSelect-select": {
       padding: theme.spacing(1),
@@ -54,28 +55,18 @@ export default function Topbar() {
 
   return (
     <AppBar position="static" className={classes.root}>
-      <Toolbar>
-        <Typography component="h1" variant="h5">
+      <Toolbar sx={{ justifyContent: "space-around" }}>
+        <Typography component="h1" variant="h5" sx={{ marginRight: "auto" }}>
           {intl.formatMessage({
             id: "title",
             defaultMessage: "Diablo 2 Resurrected Runewords",
           })}
         </Typography>
-        <IconButton
-          onClick={() => {
-            window.open("mailto:k.b.ziemski@gmail.com");
-          }}
-          size="large"
-          edge="start"
-          color="inherit"
-          aria-label="contact"
-          sx={{ mr: 3, marginLeft: "auto" }}
-        >
-          <MailIcon />
-          <Typography sx={{ marginLeft: 2 }}>k.b.ziemski@gmail.com</Typography>
-        </IconButton>
+
+        <Hidden smDown>
+          <MainContact />
+        </Hidden>
         <Select
-          // IconComponent={<span></span>}
           onChange={handleLanguageChange}
           //  @ts-ignore
           value={setting.language}

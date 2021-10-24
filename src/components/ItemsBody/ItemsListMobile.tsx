@@ -47,6 +47,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   listItemInfo: {
     width: "30%",
+    minWidth: 100,
     maxWidth: "300",
     flexShrink: 0,
     display: "flex",
@@ -146,11 +147,13 @@ export default function ItemsTableDesktop({
             >
               <div className={classes.listItemInfo}>
                 <Typography className={classes.listItemName}>{name}</Typography>
-                <Typography sx={{ color: "orange" }}>{runes}</Typography>
+                <Typography sx={{ color: "#fe7405", fontWeight: 700 }}>
+                  {runes}
+                </Typography>
                 <Typography>{`${allowed} (${sockets})`}</Typography>
                 <Typography>{reqLvl}</Typography>
               </div>
-              <List>
+              <List sx={{ overflow: "auto" }}>
                 {stats.map((stat, index) => {
                   return (
                     <ListItem className={classes.statListItem} key={index}>

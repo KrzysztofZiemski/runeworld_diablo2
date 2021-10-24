@@ -6,6 +6,7 @@ import Panel from "./components/Panel/Panel";
 import ItemsBody from "./components/ItemsBody/ItemsBody";
 import Topbar from "./components/TopBar/Topbar";
 import ContentContainer from "./components/ContentContainer/ContentContainer";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const settings = useSelector(AllSettingsStoreSelector);
@@ -24,6 +25,7 @@ function App() {
           <Panel />
           <ItemsBody />
         </ContentContainer>
+        <Footer />
       </IntlProvider>
     </div>
   );
