@@ -18,8 +18,10 @@ import MainContact from "../MainContact/MainContact";
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
+    position: "relative",
     background: theme.palette.primary.main,
     width: "100%",
+    zIndex: 1301,
   },
   contact: {
     display: "flex",
@@ -36,6 +38,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     padding: "0px !important",
     marginLeft: 2,
     backgroundColor: theme.palette.common.white,
+
     "& .MuiSelect-select": {
       padding: theme.spacing(1),
     },

@@ -3,6 +3,7 @@ import React from "react";
 
 const useStyles = makeStyles({
   root: {
+    position: "relative",
     width: "100%",
     maxWidth: 1280,
     margin: "0 auto",

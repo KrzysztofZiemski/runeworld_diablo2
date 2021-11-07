@@ -3,6 +3,10 @@
     "pl": "PL",
     "en": "EN"
   },
+  "cookies": {
+    "title": " Dbamy o Twoją prywatność",
+    "content": "W celu zachowania popranwego działania aplikacji oraz jejmonitorowania, przechowujemy informacje na urządzeniu oraz uzyskujem do nich dostęp."
+  },
   "title": "Diablo 2 Resurrected - Słowa Runiczne",
   "tableHeaders": {
     "name": "Nazwa",
@@ -17,7 +21,9 @@
     "unselectAll": "Odznacz Wszystkie",
     "all": "Wszystkie",
     "contact": "Kontakt",
-    "filter": "Filtruj"
+    "filter": "Filtruj",
+    "agree": "zgoda",
+    "disagree": "nie zgadzam się"
   },
   "ItemType": {
     "Polearms": "Broń Drzewcowa",

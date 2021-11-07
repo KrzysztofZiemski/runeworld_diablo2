@@ -3,6 +3,10 @@
     "pl": "PL",
     "en": "EN"
   },
+  "cookies": {
+    "title": "We care about your privacy",
+    "content": "We store information on the device and use them to keep the application working properly."
+  },
   "title": "Diablo 2 Resurrected - Runewords",
   "tableHeaders": {
     "name": "Name",
@@ -17,7 +21,9 @@
     "unselectAll": "Unselect all",
     "all": "All",
     "contact": "Contact",
-    "filter": "Filter"
+    "filter": "Filter",
+    "agree": "agree",
+    "disagree": "disagree"
   },
   "ItemType": {
     "Polearms": "Polearms",

@@ -1,33 +1,27 @@
-import { useSelector } from "react-redux";
-import { AllSettingsStoreSelector } from "./store/appConfig/selectors";
-import { IntlProvider } from "react-intl";
-import { getMessages } from "./i18n/i18n";
-import Panel from "./components/Panel/Panel";
-import ItemsBody from "./components/ItemsBody/ItemsBody";
-import Topbar from "./components/TopBar/Topbar";
+import { Grid } from "@mui/material";
 import ContentContainer from "./components/ContentContainer/ContentContainer";
+import CookiesBanner from "./components/CookiesBanner/CookiesBanner";
 import Footer from "./components/Footer/Footer";
+import ItemsBody from "./components/ItemsBody/ItemsBody";
+import LanguageProvider from "./components/LanguageProvider/LanguageProvider";
+import Panel from "./components/Panel/Panel";
+import Topbar from "./components/TopBar/Topbar";
 
 function App() {
-  const settings = useSelector(AllSettingsStoreSelector);
-
   return (
-    <div
-      style={{ width: "100%", overflow: "hidden", backgroundColor: "#f3f3f3" }}
+    <Grid
+      sx={{ width: "100%", overflow: "hidden", backgroundColor: "#f3f3f3" }}
     >
-      <IntlProvider
-        messages={getMessages(settings.language)}
-        locale={settings.language}
-        defaultLocale="EN"
-      >
+      <LanguageProvider>
         <Topbar />
         <ContentContainer>
+          <CookiesBanner />
           <Panel />
           <ItemsBody />
         </ContentContainer>
         <Footer />
-      </IntlProvider>
-    </div>
+      </LanguageProvider>
+    </Grid>
   );
 }
 
