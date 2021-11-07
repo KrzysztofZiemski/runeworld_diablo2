@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect } from "react";
 import ReactGA from "react-ga";
 import { useDispatch, useSelector } from "react-redux";
 import { setAgreeCookies } from "../store/appConfig/actions";
@@ -18,9 +18,12 @@ export const useGA = () => {
     setting.agreeCookies && enableGA();
   }, [setting.agreeCookies]);
 
-  const setEnable = useCallback((value: boolean) => {
-    dispatch(setAgreeCookies(value));
-  }, []);
+  const setEnable = useCallback(
+    (value: boolean) => {
+      dispatch(setAgreeCookies(value));
+    },
+    [dispatch]
+  );
 
   return [setting.agreeCookies, setEnable] as const;
 };
