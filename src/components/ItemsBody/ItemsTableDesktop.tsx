@@ -8,6 +8,7 @@ import {
   TableHead,
   TableRow,
   Theme,
+  Typography,
 } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import { useIntl } from "react-intl";
@@ -31,6 +32,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     "&:last-child td, &:last-child th": {
       border: 0,
     },
+  },
+  markedColor: {
+    background: `${theme.palette.secondary.light} !important`,
+  },
+  markedText: {
+    color: theme.palette.secondary.main,
+    textTransform: "capitalize",
   },
   tableHead: {
     backgroundColor: theme.palette.common.black,
@@ -108,33 +116,48 @@ export default function ItemsTableDesktop({
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map(({ name, allowed, reqLvl, stats, runes }, index) => {
-            const statsList = (
-              <List className={classes.listStats}>
-                {stats.map((stat: string, index: number) => (
-                  <ListItem
-                    key={stat + index}
-                    className={classes.statsListItem}
-                  >
-                    {stat}
-                  </ListItem>
-                ))}
-              </List>
-            );
-            return (
-              <TableRow
-                className={classes.row}
-                key={name + index}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-              >
-                <Cell text={name} />
-                <Cell text={allowed} />
-                <Cell text={runes} />
-                <Cell text={reqLvl} />
-                <Cell text={statsList} />
-              </TableRow>
-            );
-          })}
+          {rows.map(
+            ({ name, allowed, reqLvl, stats, runes, markedText }, index) => {
+              const statsList = (
+                <List className={classes.listStats}>
+                  {stats.map((stat: string, index: number) => (
+                    <ListItem
+                      key={stat + index}
+                      className={classes.statsListItem}
+                    >
+                      {stat}
+                    </ListItem>
+                  ))}
+                </List>
+              );
+              return (
+                <TableRow
+                  className={
+                    markedText
+                      ? `${classes.row} ${classes.markedColor}`
+                      : classes.row
+                  }
+                  key={name + index}
+                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                >
+                  <Cell
+                    text={name}
+                    note={
+                      markedText ? (
+                        <Typography className={classes.markedText}>
+                          {`(${markedText})`}
+                        </Typography>
+                      ) : undefined
+                    }
+                  />
+                  <Cell text={allowed} />
+                  <Cell text={runes} />
+                  <Cell text={reqLvl} />
+                  <Cell text={statsList} />
+                </TableRow>
+              );
+            }
+          )}
           <TableRow></TableRow>
         </TableBody>
       </Table>

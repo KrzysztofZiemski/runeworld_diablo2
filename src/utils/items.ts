@@ -13,6 +13,7 @@ export type Item = {
   runes: Rune[] | string[];
   reqLvl: number;
   stats: Stat[];
+  markedText?: string;
 };
 export const items: Item[] = [
   {
@@ -3869,5 +3870,378 @@ export const items: Item[] = [
       },
     ],
     runes: ["Dol", "Eld", "Hel", "Ist", "Tir", "Vex"],
+  },
+
+  {
+    name: "Plague",
+    reqLvl: 67,
+    allowed: ["Swords"],
+    markedText: "patch 2.4",
+    stats: [
+      {
+        id: "stats.20%Chancetocastlevel12LowerResist",
+        defaultMessage: "20% Chance to cast level 12 Lower Resist",
+      },
+      {
+        id: "stats.25%Chancetocastlevel15PoisonNovaonstriking",
+        defaultMessage: "25% Chance to cast level 15 Poison Nova on striking",
+      },
+      {
+        id: "stats.Level13-17CleansingAuraWhenEquipped(varies)",
+        defaultMessage: "Level 13-17 Cleansing Aura When Equipped (varies)",
+      },
+      {
+        id: "stats.1-2AllSkills",
+        defaultMessage: "+1-2 All Skills",
+      },
+      {
+        id: "stats.20%IncreasedAttackSpeed",
+        defaultMessage: "+20% Increased Attack Speed",
+      },
+      {
+        id: "stats.220-320%EnhancedDamage(varies)",
+        defaultMessage: "+220-320% Enhanced Damage (varies)",
+      },
+      {
+        id: "stats.23%ToEnemyPoisonResistance",
+        defaultMessage: "-23% To Enemy Poison Resistance",
+      },
+      {
+        id: "stats.0.3%(0-29.7)DeadlyStrike(BasedonCharacterLevel)",
+        defaultMessage:
+          "0.3% (0-29.7) Deadly Strike (Based on Character Level)",
+      },
+      {
+        id: "stats.25%ChanceofOpenWounds",
+        defaultMessage: "+25% Chance of Open Wounds",
+      },
+      {
+        id: "stats.FreezesTarget+3",
+        defaultMessage: "Freezes Target +3",
+      },
+    ],
+    runes: ["Cham", "Shael", "Um"],
+  },
+  {
+    name: "Pattern",
+    reqLvl: 23,
+    allowed: ["Katars"],
+    markedText: "patch 2.4",
+    stats: [
+      {
+        id: "stats.30%FasterBlockRate",
+        defaultMessage: "+30% Faster Block Rate",
+      },
+      {
+        id: "stats.40-80%EnhancedDamage(varies)",
+        defaultMessage: "+40-80% Enhanced Damage (varies)",
+      },
+      {
+        id: "stats.10%BonustoAttackRating",
+        defaultMessage: "10% Bonus to Attack Rating",
+      },
+      {
+        id: "stats.Adds17-62FireDamage",
+        defaultMessage: "Adds 17-62 Fire Damage",
+      },
+      {
+        id: "stats.Adds1-50LightningDamage",
+        defaultMessage: "Adds 1-50 Lightning Damage",
+      },
+      {
+        id: "stats.Adds3-14ColdDamage",
+        defaultMessage: "Adds 3-14 Cold Damage",
+      },
+      {
+        id: "stats.75PoisonDamageOver5Seconds",
+        defaultMessage: "+75 Poison Damage Over 5 Seconds",
+      },
+      {
+        id: "stats.6toStrength",
+        defaultMessage: "+6 to Strength",
+      },
+      {
+        id: "stats.6toDexterity",
+        defaultMessage: "+6 to Dexterity",
+      },
+      {
+        id: "stats.AllResistances+15",
+        defaultMessage: "All Resistances +15",
+      },
+    ],
+    runes: ["Tal", "Ort", "Thul"],
+  },
+  {
+    name: "UnbendingWill",
+    reqLvl: 23,
+    allowed: ["Swords"],
+    markedText: "patch 2.4",
+    stats: [
+      {
+        id: "stats.18%ChancetocastLevel18Tauntonstriking",
+        defaultMessage: "18% Chance to cast Level 18 Taunt on striking",
+      },
+      {
+        id: "stats.3ToCombatSkills(BarbarianOnly)",
+        defaultMessage: "+3 To Combat Skills (Barbarian Only)",
+      },
+      {
+        id: "stats.20-30%IncreasedAttackSpeed(varies)",
+        defaultMessage: "+20-30% Increased Attack Speed (varies)",
+      },
+      {
+        id: "stats.300-350%EnhancedDamage(varies)",
+        defaultMessage: "+300-350% Enhanced Damage (varies)",
+      },
+      {
+        id: "stats.9ToMaximumDamage",
+        defaultMessage: "+9 To Maximum Damage",
+      },
+      {
+        id: "stats.50ToAttackRating",
+        defaultMessage: "+50 To Attack Rating",
+      },
+      {
+        id: "stats.75%DamagetoUndead",
+        defaultMessage: "+75% Damage to Undead",
+      },
+      {
+        id: "stats.50AttackRatingAgainstUndead",
+        defaultMessage: "+50 Attack Rating Against Undead",
+      },
+      {
+        id: "stats.8-10%LifeStolenPerHit(varies)",
+        defaultMessage: "8-10% Life Stolen Per Hit (varies)",
+      },
+      {
+        id: "stats.PreventMonsterHeal",
+        defaultMessage: "Prevent Monster Heal",
+      },
+      {
+        id: "stats.10ToStrength",
+        defaultMessage: "+10 To Strength",
+      },
+      {
+        id: "stats.10ToVitality",
+        defaultMessage: "+10 To Vitality",
+      },
+      {
+        id: "stats.DamageReducedBy8",
+        defaultMessage: "Damage Reduced By 8",
+      },
+      {
+        id: "stats.1LightRadius",
+        defaultMessage: "+1 Light Radius",
+      },
+      {
+        id: "stats.Requirements-20%",
+        defaultMessage: "Requirements -20%",
+      },
+    ],
+    runes: ["Fal", "Io", "Ith", "Eld", "El", "Hel"],
+  },
+  {
+    name: "Wisdom",
+    reqLvl: 41,
+    allowed: ["Helms"],
+    markedText: "patch 2.4",
+    stats: [
+      {
+        id: "stats.33%PiercingAttack",
+        defaultMessage: "+33% Piercing Attack",
+      },
+      {
+        id: "stats.15-25%BonustoAttackRating(varies)",
+        defaultMessage: "+15-25% Bonus to Attack Rating (varies)",
+      },
+      {
+        id: "stats.4-8%ManaStolenPerHit(varies)",
+        defaultMessage: "4-8% Mana Stolen Per Hit (varies)",
+      },
+      {
+        id: "stats.30%EnhancedDefense",
+        defaultMessage: "+30% Enhanced Defense",
+      },
+      {
+        id: "stats.10Energy",
+        defaultMessage: "+10 Energy",
+      },
+      {
+        id: "stats.15%SlowerStaminaDrain",
+        defaultMessage: "15% Slower Stamina Drain",
+      },
+      {
+        id: "stats.CannotBeFrozen",
+        defaultMessage: "Cannot Be Frozen",
+      },
+      {
+        id: "stats.5ManaAfterEachKill",
+        defaultMessage: "+5 Mana After Each Kill",
+      },
+      {
+        id: "stats.15%DamageTakenGoestoMana",
+        defaultMessage: "15% Damage Taken Goes to Mana",
+      },
+    ],
+    runes: ["Pul", "Ith", "Eld"],
+  },
+  {
+    name: "Obsession",
+    reqLvl: 69,
+    allowed: ["Staves"],
+    markedText: "patch 2.4",
+    stats: [
+      {
+        id: "stats.Indestructible",
+        defaultMessage: "Indestructible",
+      },
+      {
+        id: "stats.24%Chancetocastlevel10Weakenwhenstruck",
+        defaultMessage: "24% Chance to cast level 10 Weaken when struck",
+      },
+      {
+        id: "stats.4ToAllSkills",
+        defaultMessage: "+4 To All Skills",
+      },
+      {
+        id: "stats.65%FasterCastRate",
+        defaultMessage: "+65% Faster Cast Rate",
+      },
+      {
+        id: "stats.60%FasterHitRecovery",
+        defaultMessage: "+60% Faster Hit Recovery",
+      },
+      {
+        id: "stats.Knockback",
+        defaultMessage: "Knockback",
+      },
+      {
+        id: "stats.10ToVitality",
+        defaultMessage: "+10 To Vitality",
+      },
+      {
+        id: "stats.10ToEnergy",
+        defaultMessage: "+10 To Energy",
+      },
+      {
+        id: "stats.IncreaseMaximumLife15-25%(varies)",
+        defaultMessage: "Increase Maximum Life 15-25% (varies)",
+      },
+      {
+        id: "stats.RegenerateMana15-30%(varies)",
+        defaultMessage: "Regenerate Mana 15-30% (varies)",
+      },
+      {
+        id: "stats.AllResistances+60-70(varies)",
+        defaultMessage: "All Resistances +60-70 (varies)",
+      },
+      {
+        id: "stats.75%ExtraGoldFromMonsters",
+        defaultMessage: "75% Extra Gold from Monsters",
+      },
+      {
+        id: "stats.30%BetterChanceofGettingMagicItems",
+        defaultMessage: "30% Better Chance of Getting Magic Items",
+      },
+    ],
+    runes: ["Zod", "Ist", "Lem", "Lum", "Io", "Nef"],
+  },
+  {
+    name: "FlickeringFlame",
+    reqLvl: 55,
+    allowed: ["Helms"],
+    markedText: "patch 2.4",
+    stats: [
+      {
+        id: "stats.Level4-8ResistFireAuraWhenEquipped(varies)",
+        defaultMessage: "Level 4-8 Resist Fire Aura When Equipped (varies)",
+      },
+      {
+        id: "stats.3ToFireSkills",
+        defaultMessage: "+3 To Fire Skills",
+      },
+      {
+        id: "stats.10-15%toEnemyFireResistance(varies)",
+        defaultMessage: "-10-15% to Enemy Fire Resistance (varies)",
+      },
+      {
+        id: "stats.30%EnhancedDefense",
+        defaultMessage: "+30% Enhanced Defense",
+      },
+      {
+        id: "stats.30DefenseVs.Missile",
+        defaultMessage: "+30 Defense Vs. Missile",
+      },
+      {
+        id: "stats.50-75ToMana(varies)",
+        defaultMessage: "+50-75 To Mana (varies)",
+      },
+      {
+        id: "stats.HalfFreezeDuration",
+        defaultMessage: "Half Freeze Duration",
+      },
+      {
+        id: "stats.5%ToMaximumFireResist",
+        defaultMessage: "+5% To Maximum Fire Resist",
+      },
+      {
+        id: "stats.PoisonLengthReducedby50%",
+        defaultMessage: "Poison Length Reduced by 50%",
+      },
+    ],
+    runes: ["Nef", "Pul", "Vex"],
+  },
+  {
+    name: "Mist",
+    reqLvl: 67,
+    allowed: ["MissileWeapons"],
+    markedText: "patch 2.4",
+    stats: [
+      {
+        id: "stats.Level8-12ConcentrationAuraWhenEquipped(varies)",
+        defaultMessage: "Level 8-12 Concentration Aura When Equipped (varies)",
+      },
+      {
+        id: "stats.3ToAllSkills",
+        defaultMessage: "+3 To All Skills",
+      },
+      {
+        id: "stats.20%IncreasedAttackSpeed",
+        defaultMessage: "20% Increased Attack Speed",
+      },
+      {
+        id: "stats.100%PiercingAttack",
+        defaultMessage: "+100% Piercing Attack",
+      },
+      {
+        id: "stats.325-375%EnhancedDamage(varies)",
+        defaultMessage: "+325-375% Enhanced Damage (varies)",
+      },
+      {
+        id: "stats.9ToMaximumDamage",
+        defaultMessage: "+9 To Maximum Damage",
+      },
+      {
+        id: "stats.20%BonustoAttackRating",
+        defaultMessage: "20% Bonus to Attack Rating",
+      },
+      {
+        id: "Adds3-14ColdDamage",
+        defaultMessage: "Adds 3-14 Cold Damage",
+      },
+      {
+        id: "stats.FreezeTarget+3",
+        defaultMessage: "Freeze Target +3",
+      },
+      {
+        id: "stats.24Vitality",
+        defaultMessage: "+24 Vitality",
+      },
+      {
+        id: "stats.AllResistances+40",
+        defaultMessage: "All Resistances +40",
+      },
+    ],
+    runes: ["Cham", "Shael", "Gul", "Thul", "Ith"],
   },
 ];

@@ -45,6 +45,15 @@ const useStyles = makeStyles((theme: Theme) => ({
     margin: `${theme.spacing(1)} 0px !important`,
     alignItems: "stretch !important",
   },
+  marked: {
+    // border: `2px solid ${theme.palette.secondary.main}`,
+    backgroundColor: theme.palette.secondary.light,
+  },
+  markedText: {
+    marginTop: "auto",
+    color: theme.palette.secondary.main,
+    textTransform: "capitalize",
+  },
   listItemInfo: {
     width: "30%",
     minWidth: 100,
@@ -137,34 +146,53 @@ export default function ItemsTableDesktop({
         </Grid>
       </Card>
       <List className={classes.list}>
-        {rows.map(({ name, allowed, reqLvl, stats, runes, sockets }, index) => {
-          return (
-            <ListItem
-              key={name + index}
-              className={classes.listItem}
-              elevation={3}
-              component={Paper}
-            >
-              <div className={classes.listItemInfo}>
-                <Typography className={classes.listItemName}>{name}</Typography>
-                <Typography sx={{ color: "#fe7405", fontWeight: 700 }}>
-                  {runes}
-                </Typography>
-                <Typography>{`${allowed} (${sockets})`}</Typography>
-                <Typography>{reqLvl}</Typography>
-              </div>
-              <List sx={{ overflow: "auto" }}>
-                {stats.map((stat, index) => {
-                  return (
-                    <ListItem className={classes.statListItem} key={index}>
-                      {stat}
-                    </ListItem>
-                  );
-                })}
-              </List>
-            </ListItem>
-          );
-        })}
+        {rows.map(
+          (
+            { name, allowed, reqLvl, stats, runes, sockets, markedText },
+            index
+          ) => {
+            return (
+              <ListItem
+                key={name + index}
+                className={
+                  markedText
+                    ? `${classes.listItem} ${classes.marked}`
+                    : classes.listItem
+                }
+                elevation={3}
+                component={Paper}
+              >
+                <div className={classes.listItemInfo}>
+                  <Typography className={classes.listItemName}>
+                    {name}
+                  </Typography>
+                  <Typography sx={{ color: "#fe7405", fontWeight: 700 }}>
+                    {runes}
+                  </Typography>
+                  <Typography>{`${allowed} (${sockets})`}</Typography>
+                  <Typography>{reqLvl}</Typography>
+                  {markedText && (
+                    <Typography
+                      className={classes.markedText}
+                      style={{ marginTop: "auto" }}
+                    >
+                      {markedText}
+                    </Typography>
+                  )}
+                </div>
+                <List sx={{ overflow: "auto" }}>
+                  {stats.map((stat, index) => {
+                    return (
+                      <ListItem className={classes.statListItem} key={index}>
+                        {stat}
+                      </ListItem>
+                    );
+                  })}
+                </List>
+              </ListItem>
+            );
+          }
+        )}
       </List>
     </>
   );

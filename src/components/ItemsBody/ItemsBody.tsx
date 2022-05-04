@@ -13,6 +13,7 @@ export type Row = {
   stats: string[];
   runes: string;
   sockets: number;
+  markedText?: string;
 };
 
 export default function ItemsBody() {
@@ -51,6 +52,7 @@ export default function ItemsBody() {
         sockets: el.runes.length,
         reqLvl,
         stats,
+        markedText: el.markedText,
       };
     });
   }, [list, intl]);

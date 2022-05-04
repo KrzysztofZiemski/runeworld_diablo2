@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
 import { makeStyles } from "@mui/styles";
-import { ElementType } from "react";
+import { ElementType, ReactNode } from "react";
 import { FilterFields } from "../../types/filter";
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -28,11 +28,13 @@ interface CellProps {
   text: string | number | React.ReactNode;
   name?: FilterFields;
   component?: ElementType<TableCellBaseProps>;
+  note?: ReactNode;
 }
 export default function Cell({
   handleSort,
   text,
   name,
+  note,
   component = "td",
 }: CellProps) {
   const classes = useStyles();
@@ -73,6 +75,7 @@ export default function Cell({
       ) : (
         text
       )}
+      {note && note}
     </TableCell>
   );
 }
